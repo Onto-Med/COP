@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.lha.org/cop"
+     xml:base="http://www.lha.org/cop"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:cop="http://www.lha.org/cop#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:duo="http://www.lha.org/duo#">
+    <owl:Ontology rdf:about="http://www.lha.org/cop"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lha.org/cop#field_category -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_category">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_datatype -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_datatype">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_definition">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_formula -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_formula">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_label">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_phenotype -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_phenotype">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_related_concept -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_related_concept">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_score -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_score">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_unit -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_unit">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/cop#field_variable -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/cop#field_variable">
+        <rdfs:subPropertyOf rdf:resource="http://www.lha.org/duo#field"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.lha.org/duo#field -->
+
+    <owl:AnnotationProperty rdf:about="http://www.lha.org/duo#field"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lha.org/cop#has_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.lha.org/cop#has_part">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lha.org/cop#has_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lha.org/cop#has_value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lha.org/cop#Abstract_Boolean_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Abstract_Boolean_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Abstract_Calculation_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Abstract_Calculation_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Abstract_Single_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Abstract_Single_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Boolean_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Boolean_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Complex_Phenotype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Calculation_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Calculation_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Complex_Phenotype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Complex_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Complex_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/duo#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Phenotype_Category -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Phenotype_Category">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/duo#Vocabulary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Phenotype_Class -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Restricted_Boolean_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Restricted_Boolean_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Restricted_Calculation_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Restricted_Calculation_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Restricted_Single_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Restricted_Single_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/cop#Single_Phenotype -->
+
+    <owl:Class rdf:about="http://www.lha.org/cop#Single_Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.lha.org/cop#Phenotype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/duo#File -->
+
+    <owl:Class rdf:about="http://www.lha.org/duo#File">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/duo#Node -->
+
+    <owl:Class rdf:about="http://www.lha.org/duo#Node">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lha.org/duo#Vocabulary -->
+
+    <owl:Class rdf:about="http://www.lha.org/duo#Vocabulary">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi -->
+
