@@ -205,11 +205,35 @@
     
 
 
+    <!-- https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
     <!-- https://www.smith.care/cop#Non_restricted_Phenotype_Class -->
 
     <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Phenotype_Class">
         <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype_Class"/>
         <rdfs:comment>The extension (set of instances) of a non-restricted phenotype class is not restricted to a certain range of individual phenotypes, all instances are allowed. For example, the phenotype class ‘age’ instantiated by the ages of all living beings is non-restricted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
     </owl:Class>
     
 
@@ -241,11 +265,35 @@
     
 
 
+    <!-- https://www.smith.care/cop#Restricted_Combined_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Combined_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Derived_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Derived_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
     <!-- https://www.smith.care/cop#Restricted_Phenotype_Class -->
 
     <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Phenotype_Class">
         <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype_Class"/>
         <rdfs:comment>The extension (set of instances) of a restricted phenotype class is restricted to a certain range of individual phenotypes by defined conditions. For example, the phenotype class ‘young age’ instantiated by the ages of the young living beings (e.g., if the age is below 30 years) is restricted. A restricted phenotype class is a subclass of a non-restricted phenotype class (e.g., ‘young age’ is subclass of &apos;age&apos;).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Single_Phenotype_Class -->
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Single_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
     </owl:Class>
     
 
