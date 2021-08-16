@@ -1,0 +1,37 @@
+title: "Core Ontology of Phenotypes (COP)"
+abstract: "The Core Ontology of Phenotypes is a core ontology, which can be used to specify phenotype algorithms as ontologies (Phenotype Algorithm Specification Ontology)."
+authors:
+  -
+    affiliation: "University of Leipzig"
+    family-names: Uciteli
+    given-names: Alexandr
+    orcid: "https://orcid.org/0000-0001-9558-5352"
+  -
+    affiliation: "University of Leipzig"
+    family-names: Beger
+    given-names: Christoph
+    orcid: "https://orcid.org/0000-0002-1166-0368"
+  -
+    affiliation: "University of Leipzig"
+    family-names: Kirsten
+    given-names: Toralf
+    orcid: "https://orcid.org/0000-0001-7117-4268"
+  -
+    affiliation: "University of Leipzig"
+    family-names: Meineke
+    given-names: Frank
+    orcid: "https://orcid.org/0000-0002-9256-7543"
+  -
+    affiliation: "University of Leipzig"
+    family-names: Herre
+    given-names: Heinrich
+cff-version: "1.1.0"
+date-released: 2021-04-19
+keywords: 
+  - ontology
+  - phenotype
+  - "inference-engine"
+  - "phenotype-exchange-format"
+license: "GPL-3.0"
+message: "If you use the content of this repository, please cite it using these metadata."
+version: "v0.2.0"
