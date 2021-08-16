@@ -33,5 +33,6 @@ keywords:
   - "inference-engine"
   - "phenotype-exchange-format"
 license: "GPL-3.0"
+doi: 10.5281/zenodo.5205498
 message: "If you use the content of this repository, please cite it using these metadata."
 version: "v0.2.0"
