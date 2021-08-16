@@ -1,5 +1,7 @@
 # Core Ontology of Phenotypes (COP)
 
+[![DOI](https://zenodo.org/badge/233046335.svg)](https://zenodo.org/badge/latestdoi/233046335)
+
 ## Introduction
 
 COP is a core ontology, which can be used to specify phenotype algorithms as ontologies (Phenotype Algorithm Specification Ontology, PASO).
