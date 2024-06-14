@@ -1,6 +1,6 @@
 # Core Ontology of Phenotypes (COP)
 
-[![DOI](https://zenodo.org/badge/233046335.svg)](https://zenodo.org/badge/latestdoi/233046335)
+[![DOI](https://zenodo.org/badge/233046335.svg)](https://zenodo.org/badge/latestdoi/233046335) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 
 ## Introduction
 
