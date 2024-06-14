@@ -558,7 +558,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Basic phenotype classes represent phenotypes that have already been determined and for which the data are available.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Basisphänotypklassen stellen Phänotypen dar, die bereits bestimmt wurden und für die Daten verfügbar sind.</rdfs:comment>
         <rdfs:label xml:lang="en">Basic phenotype class</rdfs:label>
+        <rdfs:label xml:lang="de">Basisphänotypklasse</rdfs:label>
     </owl:Class>
     
 
@@ -575,7 +577,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A basic phenotype restriction is a restriction of a basic phenotype class.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Basisphänotypeinschränkung ist eine Einschränkung einer Basisphänotypklasse.</rdfs:comment>
         <rdfs:label xml:lang="en">Basic phenotype restriction</rdfs:label>
+        <rdfs:label xml:lang="de">Basisphänotypeinschränkung</rdfs:label>
     </owl:Class>
     
 
@@ -597,8 +601,10 @@
                 <owl:onClass rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Derived phenotype classes model phenotypes that should be deduced from other phenotypes and thus require a derivation expression/rule/formula to be formulated.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Derived phenotype classes model phenotypes that are to be deduced from other phenotypes and thus require a derivation expression/rule/formula to be formulated.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Abgeleitete Phänotypklassen modellieren Phänotypen, die aus anderen Phänotypen abgeleitet werden sollten und daher die Formulierung eines Ableitungsausdrucks/einer Ableitungsregel/einer Ableitungsformel erfordern.</rdfs:comment>
         <rdfs:label xml:lang="en">Derived phenotype class</rdfs:label>
+        <rdfs:label xml:lang="de">Abgeleitete Phänotypklasse</rdfs:label>
     </owl:Class>
     
 
@@ -615,7 +621,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A derived phenotype restriction is a restriction of a derived phenotype class.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine abgeleitete Phänotypeinschränkung ist eine Einschränkung einer abgeleiteten Phänotypklasse.</rdfs:comment>
         <rdfs:label xml:lang="en">Derived phenotype restriction</rdfs:label>
+        <rdfs:label xml:lang="de">Abgeleitete Phänotypeinschränkung</rdfs:label>
     </owl:Class>
     
 
@@ -625,7 +633,9 @@
     <owl:Class rdf:about="https://purl.org/ontology/cop/DynamicPhenotypeAlgorithm">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeAlgorithm"/>
         <rdfs:comment xml:lang="en">A dynamic phenotype algorithm is a clear specification of instructions for executing an arbitrary phenotype query.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein dynamischer Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen für die Ausführung einer beliebigen Phänotyp-Abfrage.</rdfs:comment>
         <rdfs:label xml:lang="en">Dynamic phenotype algorithm</rdfs:label>
+        <rdfs:label xml:lang="de">Dynamischer Phänotyp-Algorithmus</rdfs:label>
     </owl:Class>
     
 
@@ -648,7 +658,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Phänotyp ist eine (Kombination von) körperliche(n) Eigenschaft(en) oder beobachtbare(s) Merkmal(e)/Eigenschaft(en) eines Organismus.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotyp</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
@@ -677,7 +689,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype algorithm is a clear specification of instructions for executing a phenotype query, i.e., identifying individuals matching the query criteria (i.e., meeting all the inclusion but none of the exclusion criteria) and deriving/outputting further phenotypes (projection entries).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen zur Ausführung einer Phänotyp-Abfrage, d.h. zur Identifizierung von Individuen, die den Abfragekriterien entsprechen (d.h. alle Einschluss-, aber keines der Ausschlusskriterien erfüllen) und zur Ableitung/Ausgabe weiterer Phänotypen (Projektionseinträge).</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype algorithm</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotyp-Algorithmus</rdfs:label>
     </owl:Class>
     
 
@@ -699,7 +713,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Phenotype classes are categories whose instances are phenotypes.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Phänotypklassen sind Kategorien, deren Instanzen Phänotypen sind.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype class</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotypklasse</rdfs:label>
     </owl:Class>
     
 
@@ -715,7 +731,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype model is a formal representation of delimited phenotypic knowledge (i.e., phenotype classes, their attributes, and relationships).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Phänotypmodell ist eine formale Darstellung von abgegrenztem phänotypischem Wissen (d.h. von Phänotypklassen, ihren Attributen und Beziehungen).</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype model</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotypmodell</rdfs:label>
     </owl:Class>
     
 
@@ -743,7 +761,9 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype query is a specification of certain phenotype classes as inclusion or exclusion criteria or as projection (output) entries.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Phänotyp-Abfrage ist eine Spezifikation bestimmter Phänotyp-Klassen als Ein- oder Ausschlusskriterien oder als Projektions- (Ausgabe-) Einträge.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype query</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotyp-Abfrage</rdfs:label>
     </owl:Class>
     
 
@@ -767,7 +787,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype class whose extension (the set of instances, i.e., phenotypes) is restricted to a certain value range is called phenotype restriction.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) auf einen bestimmten Wertebereich beschränkt ist, wird als Phänotyprestriktion bezeichnet.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotype restriction</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotyprestriktion</rdfs:label>
     </owl:Class>
     
 
@@ -777,7 +799,9 @@
     <owl:Class rdf:about="https://purl.org/ontology/cop/Phenotyping">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Process"/>
         <rdfs:comment xml:lang="en">Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotyping</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotypisierung</rdfs:label>
     </owl:Class>
     
 
@@ -799,7 +823,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Phenotyping software is a software implementing a phenotype algorithm. A run of the software (implemented phenotype algorithm) realises a phenotyping process.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Phänotypisierungssoftware ist eine Software, die einen Phänotypisierungsalgorithmus implementiert. Ein Durchlauf der Software (implementierter Phänotypisierungsalgorithmus) führt einen Phänotypisierungsprozess durch.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotyping software</rdfs:label>
+        <rdfs:label xml:lang="de">Phänotypisierungssoftware</rdfs:label>
     </owl:Class>
     
 
@@ -808,7 +834,9 @@
 
     <owl:Class rdf:about="https://purl.org/ontology/cop/RepresentationEntity">
         <rdfs:comment xml:lang="en">Representation entity is a model, specification or description.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Darstellungseinheit ist ein Modell, eine Spezifikation oder eine Beschreibung.</rdfs:comment>
         <rdfs:label xml:lang="en">Representation entity</rdfs:label>
+        <rdfs:label xml:lang="de">Darstellungseinheit</rdfs:label>
     </owl:Class>
     
 
@@ -825,7 +853,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A static phenotype algorithm is a clear specification of instructions for executing exactly one specific phenotype query.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein statischer Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen zur Ausführung genau einer bestimmten Phänotyp-Abfrage.</rdfs:comment>
         <rdfs:label xml:lang="en">Static phenotype algorithm</rdfs:label>
+        <rdfs:label xml:lang="de">Statischer Phänotyp-Algorithmus</rdfs:label>
     </owl:Class>
     
 
@@ -835,7 +865,9 @@
     <owl:Class rdf:about="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
         <rdfs:comment xml:lang="en">A phenotype class whose extension (the set of instances, i.e., phenotypes) is not restricted to a certain value range is called unrestricted phenotype class.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) nicht auf einen bestimmten Wertebereich beschränkt ist, wird als uneingeschränkte Phänotypklasse bezeichnet.</rdfs:comment>
         <rdfs:label xml:lang="en">Unrestricted phenotype class</rdfs:label>
+        <rdfs:label xml:lang="de">Uneingeschränkte Phänotypklasse</rdfs:label>
     </owl:Class>
     
 
