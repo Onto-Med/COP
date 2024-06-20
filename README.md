@@ -8,6 +8,10 @@ The Core Ontology of Phenotyping (COP) defines core entities and their relations
 
 ![COP overview](images/cop.png)
 
+## Contribution and Development
+
+Please see our [Contributing Guide](CONTRIBUTING.md).
+
 ## References
 
 The ontology was initially named the Core Ontology of Phenotypes. However, its scope was later expanded, prompting a name change. You may encounter references using the older name.
