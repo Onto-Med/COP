@@ -10,7 +10,7 @@ services:
       - RICKVIEW_EXAMPLES=Phenotyping Phenotype BasicPhenotypeClass
       - RICKVIEW_HOMEPAGE=https://onto-med.github.io/COP/
       - RICKVIEW_GITHUB=https://github.com/Onto-Med/COP
-      - RICKVIEW_DOC=https://github.com/Onto-Med/COP/releases/latest/download/index-en.html
+      - RICKVIEW_DOC=https://onto-med.github.io/COP/releases/latest/index-en.html
     ports:
       - "127.0.0.1:8080:8080"
     restart: unless-stopped
