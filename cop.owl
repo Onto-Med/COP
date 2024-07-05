@@ -32,9 +32,9 @@
         <dc:creator>Konrad Höffner</dc:creator>
         <dc:creator>Ralph Schäfermeier</dc:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <terms:references>GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO</terms:references>
+        <terms:references>GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; http://onto.eva.mpg.de/ontologies/gfo-bio.owl</terms:references>
         <terms:references>General Formal Ontology (GFO) (light version): https://onto-med.github.io/GFO; http://purl.org/ontology/gfo-light</terms:references>
-        <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT</terms:references>
+        <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl</terms:references>
         <foaf:homepage>https://github.com/Onto-Med/COP</foaf:homepage>
         <doap:repository rdf:resource="https://github.com/Onto-Med/COP"/>
         <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
