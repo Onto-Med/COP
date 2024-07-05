@@ -46,7 +46,7 @@ jobs:
           publish_dir: ./output
           destination_dir: release/${{ github.event.release.tag_name }}
       - name: Deploy latest documentation
-        if: ! ${{ github.event.release.prerelease }}
+        if: '!github.event.release.prerelease'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
