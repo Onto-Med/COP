@@ -1,0 +1,16 @@
+services:
+  rickview:
+    image: ghcr.io/konradhoeffner/rickview
+    environment:
+      - RICKVIEW_KB_FILE=https://github.com/Onto-Med/COP/releases/latest/download/cop.owl
+      - RICKVIEW_NAMESPACE=https://w3id.org/cop/
+      - RICKVIEW_BASE=/ontology/cop
+      - RICKVIEW_TITLE=COP
+      - RICKVIEW_SUBTITLE=Core Ontology of Phenotyping
+      - RICKVIEW_EXAMPLES=Phenotyping Phenotype BasicPhenotypeClass
+      - RICKVIEW_HOMEPAGE=https://onto-med.github.io/COP/
+      - RICKVIEW_GITHUB=https://github.com/Onto-Med/COP
+      - RICKVIEW_DOC=https://onto-med.github.io/COP/releases/latest/index-en.html
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped

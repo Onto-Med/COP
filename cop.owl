@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://purl.org/ontology/cop/"
-     xml:base="https://purl.org/ontology/cop/"
+<rdf:RDF xmlns="https://w3id.org/cop/"
+     xml:base="https://w3id.org/cop/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:cop="https://purl.org/ontology/cop/"
+     xmlns:cop="https://w3id.org/cop/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -13,10 +13,11 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:doap="http://usefulinc.com/ns/doap#">
 
-    <owl:Ontology rdf:about="https://purl.org/ontology/cop">
+    <owl:Ontology rdf:about="https://w3id.org/cop">
+        <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-06-11"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2024-06-11</owl:versionInfo>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-20</dc:created>
-        <vann:preferredNamespaceURI>https://purl.org/ontology/cop/</vann:preferredNamespaceURI>
+        <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <vann:preferredNamespacePrefix>cop</vann:preferredNamespacePrefix>
         <dc:title xml:lang="en">Core Ontology of Phenotyping (COP)</dc:title>
         <rdfs:label xml:lang="en">Core Ontology of Phenotyping</rdfs:label>
@@ -78,9 +79,9 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/ref -->
+    <!-- https://w3id.org/cop/ref -->
 
-    <owl:AnnotationProperty rdf:about="https://purl.org/ontology/cop/ref"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cop/ref"/>
     
 
 
@@ -95,166 +96,166 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/applicableFor -->
+    <!-- https://w3id.org/cop/applicableFor -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/applicableFor">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeAlgorithm"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/applicableFor">
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeAlgorithm"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/basicRestrictionOf -->
+    <!-- https://w3id.org/cop/basicRestrictionOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/basicRestrictionOf">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/cop/restrictionOf"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/BasicPhenotypeRestriction"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/BasicPhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/basicRestrictionOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/cop/restrictionOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/BasicPhenotypeRestriction"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/BasicPhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/derivedFrom -->
+    <!-- https://w3id.org/cop/derivedFrom -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/derivedFrom">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/DerivedPhenotypeClass"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/derivedFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/cop/DerivedPhenotypeClass"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/derivedRestrictionOf -->
+    <!-- https://w3id.org/cop/derivedRestrictionOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/derivedRestrictionOf">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/cop/restrictionOf"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/DerivedPhenotypeRestriction"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/DerivedPhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/derivedRestrictionOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/cop/restrictionOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/DerivedPhenotypeRestriction"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/DerivedPhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasExclusion -->
+    <!-- https://w3id.org/cop/hasExclusion -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasExclusion">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/cop/hasQueryParameter"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasExclusion">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/cop/hasQueryParameter"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasInclusion -->
+    <!-- https://w3id.org/cop/hasInclusion -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasInclusion">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/cop/hasQueryParameter"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasInclusion">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/cop/hasQueryParameter"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasPhenotype -->
+    <!-- https://w3id.org/cop/hasPhenotype -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasPhenotype">
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasPhenotype">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo/hasAttributive"/>
-        <owl:inverseOf rdf:resource="https://purl.org/ontology/cop/phenotypeOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/cop/phenotypeOf"/>
         <rdfs:domain rdf:resource="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/Phenotype"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasProjection -->
+    <!-- https://w3id.org/cop/hasProjection -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasProjection">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/cop/hasQueryParameter"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasProjection">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/cop/hasQueryParameter"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasQueryParameter -->
+    <!-- https://w3id.org/cop/hasQueryParameter -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasQueryParameter">
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasQueryParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/hasRepresentationAttribute -->
+    <!-- https://w3id.org/cop/hasRepresentationAttribute -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/hasRepresentationAttribute">
-        <owl:inverseOf rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasRepresentationAttribute">
+        <owl:inverseOf rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
         <rdfs:domain rdf:resource="https://purl.org/ontology/gfo/Entity"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/implementedBy -->
+    <!-- https://w3id.org/cop/implementedBy -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/implementedBy">
-        <owl:inverseOf rdf:resource="https://purl.org/ontology/cop/implements"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/implementedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/cop/implements"/>
         <rdfs:domain rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275"/>
         <rdfs:range rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/implements -->
+    <!-- https://w3id.org/cop/implements -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/implements">
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/implements">
         <rdfs:domain rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
         <rdfs:range rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/phenotypeOf -->
+    <!-- https://w3id.org/cop/phenotypeOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/phenotypeOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/phenotypeOf">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo/attributiveOf"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cop/Phenotype"/>
         <rdfs:range rdf:resource="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/realises -->
+    <!-- https://w3id.org/cop/realises -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/realises">
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/realises">
         <rdfs:domain rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
         <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Process"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/representationAttributeOf -->
+    <!-- https://w3id.org/cop/representationAttributeOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/representationAttributeOf">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/representationAttributeOf">
+        <rdfs:domain rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Entity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/represents -->
+    <!-- https://w3id.org/cop/represents -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/represents">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeModel"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/represents">
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeModel"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/cop/restrictionOf -->
+    <!-- https://w3id.org/cop/restrictionOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/cop/restrictionOf">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/cop/PhenotypeRestriction"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/cop/restrictionOf">
+        <rdfs:domain rdf:resource="https://w3id.org/cop/PhenotypeRestriction"/>
+        <rdfs:range rdf:resource="https://w3id.org/cop/UnrestrictedPhenotypeClass"/>
     </owl:ObjectProperty>
     
 
@@ -309,10 +310,10 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/implementedBy"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/implementedBy"/>
                 <owl:allValuesFrom rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -325,7 +326,7 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:comment xml:lang="en">A representation of something, often idealized or modified to make it conceptually easier to understand.</rdfs:comment>
         <rdfs:label xml:lang="en">Model</rdfs:label>
     </owl:Class>
@@ -335,16 +336,16 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/implements"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/implements"/>
                 <owl:someValuesFrom rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/realises"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/realises"/>
                 <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo/Process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -357,11 +358,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An identifying designation.</rdfs:comment>
@@ -373,11 +374,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A symbol or combination of symbols which is assigned to the members of a collection.</rdfs:comment>
@@ -389,11 +390,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A written or verbal account, representation, statement, or explanation of something.</rdfs:comment>
@@ -405,11 +406,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.</rdfs:comment>
@@ -421,11 +422,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeRestriction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeRestriction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The difference between the lowest and highest numerical values; the limits or scale of variation.</rdfs:comment>
@@ -437,11 +438,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An indication of the form that a value will have. Examples include string, integer, and character.</rdfs:comment>
@@ -483,11 +484,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A word having the same or nearly the same meaning as another word or other words in a language; a word or an expression that serves as a figurative or symbolic substitute for another.</rdfs:comment>
@@ -509,11 +510,11 @@
     <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550 -->
 
     <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/RepresentationEntity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/representationAttributeOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/DerivedPhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/DerivedPhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A character string containing a formal language expression that specifies how attributes are, should be, or have been derived from input parameters associated with activity.</rdfs:comment>
@@ -528,8 +529,8 @@
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Individual"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasPhenotype"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasPhenotype"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/Phenotype"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Organism</rdfs:label>
@@ -537,19 +538,19 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/BasicPhenotypeClass -->
+    <!-- https://w3id.org/cop/BasicPhenotypeClass -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/BasicPhenotypeClass">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass"/>
+    <owl:Class rdf:about="https://w3id.org/cop/BasicPhenotypeClass">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/UnrestrictedPhenotypeClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasRepresentationAttribute"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
                 <owl:someValuesFrom rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasRepresentationAttribute"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645"/>
             </owl:Restriction>
@@ -562,15 +563,15 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/BasicPhenotypeRestriction -->
+    <!-- https://w3id.org/cop/BasicPhenotypeRestriction -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/BasicPhenotypeRestriction">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeRestriction"/>
+    <owl:Class rdf:about="https://w3id.org/cop/BasicPhenotypeRestriction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeRestriction"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/basicRestrictionOf"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/basicRestrictionOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/ontology/cop/BasicPhenotypeClass"/>
+                <owl:onClass rdf:resource="https://w3id.org/cop/BasicPhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A basic phenotype restriction is a restriction of a basic phenotype class.</rdfs:comment>
@@ -581,19 +582,19 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/DerivedPhenotypeClass -->
+    <!-- https://w3id.org/cop/DerivedPhenotypeClass -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/DerivedPhenotypeClass">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass"/>
+    <owl:Class rdf:about="https://w3id.org/cop/DerivedPhenotypeClass">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/UnrestrictedPhenotypeClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/derivedFrom"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/derivedFrom"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasRepresentationAttribute"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550"/>
             </owl:Restriction>
@@ -606,15 +607,15 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/DerivedPhenotypeRestriction -->
+    <!-- https://w3id.org/cop/DerivedPhenotypeRestriction -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/DerivedPhenotypeRestriction">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeRestriction"/>
+    <owl:Class rdf:about="https://w3id.org/cop/DerivedPhenotypeRestriction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeRestriction"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/derivedRestrictionOf"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/derivedRestrictionOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/ontology/cop/DerivedPhenotypeClass"/>
+                <owl:onClass rdf:resource="https://w3id.org/cop/DerivedPhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A derived phenotype restriction is a restriction of a derived phenotype class.</rdfs:comment>
@@ -625,10 +626,10 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/DynamicPhenotypeAlgorithm -->
+    <!-- https://w3id.org/cop/DynamicPhenotypeAlgorithm -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/DynamicPhenotypeAlgorithm">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeAlgorithm"/>
+    <owl:Class rdf:about="https://w3id.org/cop/DynamicPhenotypeAlgorithm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeAlgorithm"/>
         <rdfs:comment xml:lang="en">A dynamic phenotype algorithm is a clear specification of instructions for executing an arbitrary phenotype query.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein dynamischer Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen für die Ausführung einer beliebigen Phänotyp-Abfrage.</rdfs:comment>
         <rdfs:label xml:lang="en">Dynamic phenotype algorithm</rdfs:label>
@@ -637,19 +638,19 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/Phenotype -->
+    <!-- https://w3id.org/cop/Phenotype -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/Phenotype">
+    <owl:Class rdf:about="https://w3id.org/cop/Phenotype">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Attributive"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instanceOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/phenotypeOf"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/phenotypeOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"/>
             </owl:Restriction>
@@ -660,7 +661,7 @@
         <rdfs:label xml:lang="de">Phänotyp</rdfs:label>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
+        <owl:annotatedSource rdf:resource="https://w3id.org/cop/Phenotype"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
         <owl:annotatedTarget xml:lang="en">A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism.</owl:annotatedTarget>
         <ref>Mahner M, Kary M. What Exactly Are Genomes, Genotypes and Phenotypes? And What About Phenomes? J Theor Biol 1997;186:55–63. https://doi.org/10.1006/jtbi.1996.0335.</ref>
@@ -669,20 +670,20 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypeAlgorithm -->
+    <!-- https://w3id.org/cop/PhenotypeAlgorithm -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypeAlgorithm">
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypeAlgorithm">
         <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/applicableFor"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/applicableFor"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/implementedBy"/>
-                <owl:allValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypingSoftware"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/implementedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/cop/PhenotypingSoftware"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype algorithm is a clear specification of instructions for executing a phenotype query, i.e., identifying individuals matching the query criteria (i.e., meeting all the inclusion but none of the exclusion criteria) and deriving/outputting further phenotypes (projection entries).</rdfs:comment>
@@ -693,20 +694,20 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypeClass -->
+    <!-- https://w3id.org/cop/PhenotypeClass -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypeClass">
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypeClass">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasRepresentationAttribute"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
                 <owl:someValuesFrom rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instantiatedBy"/>
-                <owl:allValuesFrom rdf:resource="https://purl.org/ontology/cop/Phenotype"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/cop/Phenotype"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Phenotype classes are categories whose instances are phenotypes.</rdfs:comment>
@@ -717,14 +718,14 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypeModel -->
+    <!-- https://w3id.org/cop/PhenotypeModel -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypeModel">
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypeModel">
         <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/represents"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/represents"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype model is a formal representation of delimited phenotypic knowledge (i.e., phenotype classes, their attributes, and relationships).</rdfs:comment>
@@ -735,24 +736,24 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypeQuery -->
+    <!-- https://w3id.org/cop/PhenotypeQuery -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypeQuery">
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypeQuery">
         <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasExclusion"/>
-                        <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                        <owl:onProperty rdf:resource="https://w3id.org/cop/hasExclusion"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasInclusion"/>
-                        <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                        <owl:onProperty rdf:resource="https://w3id.org/cop/hasInclusion"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasProjection"/>
-                        <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+                        <owl:onProperty rdf:resource="https://w3id.org/cop/hasProjection"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
                     </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
@@ -765,22 +766,22 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypeRestriction -->
+    <!-- https://w3id.org/cop/PhenotypeRestriction -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypeRestriction">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypeRestriction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/hasRepresentationAttribute"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/restrictionOf"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/restrictionOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass"/>
+                <owl:onClass rdf:resource="https://w3id.org/cop/UnrestrictedPhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A phenotype class whose extension (the set of instances, i.e., phenotypes) is restricted to a certain value range is called phenotype restriction.</rdfs:comment>
@@ -791,9 +792,9 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/Phenotyping -->
+    <!-- https://w3id.org/cop/Phenotyping -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/Phenotyping">
+    <owl:Class rdf:about="https://w3id.org/cop/Phenotyping">
         <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Process"/>
         <rdfs:comment xml:lang="en">Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes.</rdfs:comment>
         <rdfs:comment xml:lang="de">Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen.</rdfs:comment>
@@ -803,20 +804,20 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/PhenotypingSoftware -->
+    <!-- https://w3id.org/cop/PhenotypingSoftware -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/PhenotypingSoftware">
+    <owl:Class rdf:about="https://w3id.org/cop/PhenotypingSoftware">
         <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/implements"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/PhenotypeAlgorithm"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/implements"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeAlgorithm"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/realises"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/cop/Phenotyping"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/realises"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/cop/Phenotyping"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Phenotyping software is a software implementing a phenotype algorithm. A run of the software (implemented phenotype algorithm) realises a phenotyping process.</rdfs:comment>
@@ -827,9 +828,9 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/RepresentationEntity -->
+    <!-- https://w3id.org/cop/RepresentationEntity -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/RepresentationEntity">
+    <owl:Class rdf:about="https://w3id.org/cop/RepresentationEntity">
         <rdfs:comment xml:lang="en">Representation entity is a model, specification or description.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Darstellungseinheit ist ein Modell, eine Spezifikation oder eine Beschreibung.</rdfs:comment>
         <rdfs:label xml:lang="en">Representation entity</rdfs:label>
@@ -838,15 +839,15 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/StaticPhenotypeAlgorithm -->
+    <!-- https://w3id.org/cop/StaticPhenotypeAlgorithm -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/StaticPhenotypeAlgorithm">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeAlgorithm"/>
+    <owl:Class rdf:about="https://w3id.org/cop/StaticPhenotypeAlgorithm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/cop/applicableFor"/>
+                <owl:onProperty rdf:resource="https://w3id.org/cop/applicableFor"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/ontology/cop/PhenotypeQuery"/>
+                <owl:onClass rdf:resource="https://w3id.org/cop/PhenotypeQuery"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A static phenotype algorithm is a clear specification of instructions for executing exactly one specific phenotype query.</rdfs:comment>
@@ -857,10 +858,10 @@
     
 
 
-    <!-- https://purl.org/ontology/cop/UnrestrictedPhenotypeClass -->
+    <!-- https://w3id.org/cop/UnrestrictedPhenotypeClass -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/cop/UnrestrictedPhenotypeClass">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/cop/PhenotypeClass"/>
+    <owl:Class rdf:about="https://w3id.org/cop/UnrestrictedPhenotypeClass">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
         <rdfs:comment xml:lang="en">A phenotype class whose extension (the set of instances, i.e., phenotypes) is not restricted to a certain value range is called unrestricted phenotype class.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) nicht auf einen bestimmten Wertebereich beschränkt ist, wird als uneingeschränkte Phänotypklasse bezeichnet.</rdfs:comment>
         <rdfs:label xml:lang="en">Unrestricted phenotype class</rdfs:label>
