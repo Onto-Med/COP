@@ -12,17 +12,6 @@ authors:
     given-names: Christoph
     orcid: "https://orcid.org/0000-0002-1166-0368"
   - affiliation: "Leipzig University"
-    family-names: Kirsten
-    given-names: Toralf
-    orcid: "https://orcid.org/0000-0001-7117-4268"
-  - affiliation: "Leipzig University"
-    family-names: Meineke
-    given-names: Frank
-    orcid: "https://orcid.org/0000-0002-9256-7543"
-  - affiliation: "Leipzig University"
-    family-names: Herre
-    given-names: Heinrich
-  - affiliation: "Leipzig University"
     family-names: Matthies
     given-names: Franz
     orcid: "https://orcid.org/0000-0001-7196-506X"
@@ -43,30 +32,3 @@ keywords:
   - "phenotyping-algorithms"
 license: "CC-BY-4.0"
 doi: 10.5281/zenodo.5205497
-preferred-citation:
-  type: article
-  authors:
-    - affiliation: "Leipzig University"
-      family-names: Uciteli
-      given-names: Alexandr
-      orcid: "https://orcid.org/0000-0001-9558-5352"
-    - affiliation: "Leipzig University"
-      family-names: Beger
-      given-names: Christoph
-      orcid: "https://orcid.org/0000-0002-1166-0368"
-    - affiliation: "Leipzig University"
-      family-names: Kirsten
-      given-names: Toralf
-      orcid: "https://orcid.org/0000-0001-7117-4268"
-    - affiliation: "Leipzig University"
-      family-names: Meineke
-      given-names: Frank
-      orcid: "https://orcid.org/0000-0002-9256-7543"
-    - affiliation: "Leipzig University"
-      family-names: Herre
-      given-names: Heinrich
-  doi: 10.1186/s13326-020-00230-0
-  journal: "Journal of Biomedical Semantics"
-  title: "Ontological representation, classification and data-driven computing of phenotypes"
-  volume: 11
-  year: 2020
