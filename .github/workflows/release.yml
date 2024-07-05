@@ -1,0 +1,25 @@
+---
+name: Prepare release files
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container: obolibrary/odklite
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate artifacts
+        run: robot convert --input cop.owl --output cop.ttl
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          tag: ${{ github.ref }}
+          file: cop.*
+          file_glob: true
+          overwrite: true
