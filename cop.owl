@@ -15,10 +15,10 @@
      xmlns:bibo="http://purl.org/ontology/bibo/">
 
     <owl:Ontology rdf:about="https://w3id.org/cop">
-        <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-06-11"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</owl:versionInfo>
-        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</dc:modified>
-        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/v0.2.1"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-07-08"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-08</owl:versionInfo>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-08</dc:modified>
+        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/2026-06-11"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-20</dc:created>
         <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <vann:preferredNamespacePrefix>cop</vann:preferredNamespacePrefix>
