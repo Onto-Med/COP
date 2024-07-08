@@ -1,5 +1,5 @@
 <https://w3id.org/cop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/cop/release/2024-06-11> .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/cop/release/2024-07-08> .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/created> "2020-01-20"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/creator> "Alexandr Uciteli" .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/creator> "Christoph Beger" .
@@ -8,19 +8,19 @@
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/creator> "Ralph Schäfermeier" .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/description> "Die Core Ontology of Phenotyping (COP) definiert zentrale Entitäten und ihre Beziehungen, die für die Modellierung phänotypischen Wissens und die Entwicklung von Software für die Phänotypisierung relevant sind."@de .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/description> "The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software."@en .
-<https://w3id.org/cop> <http://purl.org/dc/elements/1.1/modified> "2024-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/cop> <http://purl.org/dc/elements/1.1/modified> "2024-07-08"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/title> "Core Ontology of Phenotyping (COP)"@en .
 <https://w3id.org/cop> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
-<https://w3id.org/cop> <http://purl.org/dc/terms/references> "GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO" .
-<https://w3id.org/cop> <http://purl.org/dc/terms/references> "General Formal Ontology (GFO): https://onto-med.github.io/GFO; https://www.onto-med.de/ontologies/gfo" .
-<https://w3id.org/cop> <http://purl.org/dc/terms/references> "National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT" .
+<https://w3id.org/cop> <http://purl.org/dc/terms/references> "GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; http://onto.eva.mpg.de/ontologies/gfo-bio.owl" .
+<https://w3id.org/cop> <http://purl.org/dc/terms/references> "General Formal Ontology (GFO) (light version): https://onto-med.github.io/GFO; http://purl.org/ontology/gfo-light" .
+<https://w3id.org/cop> <http://purl.org/dc/terms/references> "National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl" .
 <https://w3id.org/cop> <http://purl.org/ontology/bibo/doi> <https://zenodo.org/doi/10.5281/zenodo.5205497> .
 <https://w3id.org/cop> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cop" .
 <https://w3id.org/cop> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/cop/" .
 <https://w3id.org/cop> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/COP> .
 <https://w3id.org/cop> <http://www.w3.org/2000/01/rdf-schema#label> "Core Ontology of Phenotyping"@en .
-<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/cop/release/v0.2.1> .
-<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionInfo> "2024-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/cop/release/2026-06-11> .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionInfo> "2024-07-08"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/COP" .
 # 
 # 
@@ -94,25 +94,25 @@
 # #################################################################
 # 
 # 
-# https://purl.org/ontology/gfo/attributiveOf
-<https://purl.org/ontology/gfo/attributiveOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/ontology/gfo/attributiveOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://purl.org/ontology/gfo/hasAttributive> .
-<https://purl.org/ontology/gfo/attributiveOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo/Attributive> .
+# https://purl.org/ontology/gfo-light/attributiveOf
+<https://purl.org/ontology/gfo-light/attributiveOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/ontology/gfo-light/attributiveOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://purl.org/ontology/gfo-light/hasAttributive> .
+<https://purl.org/ontology/gfo-light/attributiveOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo-light/Attributive> .
 # 
-# https://purl.org/ontology/gfo/hasAttributive
-<https://purl.org/ontology/gfo/hasAttributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/ontology/gfo/hasAttributive> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo/Attributive> .
+# https://purl.org/ontology/gfo-light/hasAttributive
+<https://purl.org/ontology/gfo-light/hasAttributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/ontology/gfo-light/hasAttributive> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo-light/Attributive> .
 # 
-# https://purl.org/ontology/gfo/instanceOf
-<https://purl.org/ontology/gfo/instanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/ontology/gfo/instanceOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://purl.org/ontology/gfo/instantiatedBy> .
-<https://purl.org/ontology/gfo/instanceOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo/Entity> .
-<https://purl.org/ontology/gfo/instanceOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo/Category> .
+# https://purl.org/ontology/gfo-light/instanceOf
+<https://purl.org/ontology/gfo-light/instanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/ontology/gfo-light/instanceOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://purl.org/ontology/gfo-light/instantiatedBy> .
+<https://purl.org/ontology/gfo-light/instanceOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo-light/Entity> .
+<https://purl.org/ontology/gfo-light/instanceOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo-light/Category> .
 # 
-# https://purl.org/ontology/gfo/instantiatedBy
-<https://purl.org/ontology/gfo/instantiatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/ontology/gfo/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo/Category> .
-<https://purl.org/ontology/gfo/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo/Entity> .
+# https://purl.org/ontology/gfo-light/instantiatedBy
+<https://purl.org/ontology/gfo-light/instantiatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/ontology/gfo-light/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo-light/Category> .
+<https://purl.org/ontology/gfo-light/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo-light/Entity> .
 # 
 # https://w3id.org/cop/applicableFor
 <https://w3id.org/cop/applicableFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -150,7 +150,7 @@
 # 
 # https://w3id.org/cop/hasPhenotype
 <https://w3id.org/cop/hasPhenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cop/hasPhenotype> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/ontology/gfo/hasAttributive> .
+<https://w3id.org/cop/hasPhenotype> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/ontology/gfo-light/hasAttributive> .
 <https://w3id.org/cop/hasPhenotype> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cop/phenotypeOf> .
 <https://w3id.org/cop/hasPhenotype> <http://www.w3.org/2000/01/rdf-schema#domain> <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> .
 <https://w3id.org/cop/hasPhenotype> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cop/Phenotype> .
@@ -170,7 +170,7 @@
 # https://w3id.org/cop/hasRepresentationAttribute
 <https://w3id.org/cop/hasRepresentationAttribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/cop/hasRepresentationAttribute> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/cop/representationAttributeOf> .
-<https://w3id.org/cop/hasRepresentationAttribute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo/Entity> .
+<https://w3id.org/cop/hasRepresentationAttribute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/ontology/gfo-light/Entity> .
 <https://w3id.org/cop/hasRepresentationAttribute> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/cop/RepresentationEntity> .
 # 
 # https://w3id.org/cop/implementedBy
@@ -186,19 +186,19 @@
 # 
 # https://w3id.org/cop/phenotypeOf
 <https://w3id.org/cop/phenotypeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/cop/phenotypeOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/ontology/gfo/attributiveOf> .
+<https://w3id.org/cop/phenotypeOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/ontology/gfo-light/attributiveOf> .
 <https://w3id.org/cop/phenotypeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cop/Phenotype> .
 <https://w3id.org/cop/phenotypeOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> .
 # 
 # https://w3id.org/cop/realises
 <https://w3id.org/cop/realises> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/cop/realises> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146> .
-<https://w3id.org/cop/realises> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo/Process> .
+<https://w3id.org/cop/realises> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo-light/Process> .
 # 
 # https://w3id.org/cop/representationAttributeOf
 <https://w3id.org/cop/representationAttributeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/cop/representationAttributeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/cop/RepresentationEntity> .
-<https://w3id.org/cop/representationAttributeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo/Entity> .
+<https://w3id.org/cop/representationAttributeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/ontology/gfo-light/Entity> .
 # 
 # https://w3id.org/cop/represents
 <https://w3id.org/cop/represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -243,7 +243,7 @@ _:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ncicb.nci.nih.go
 _:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cop/implements> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo/Process> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo-light/Process> .
 _:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cop/realises> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of coded instructions, which a computer follows in processing data, performing an operation, or solving a logical problem, upon execution of the program."@en .
@@ -355,64 +355,64 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism
 <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Individual> .
+<http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Individual> .
 <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
 _:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cop/Phenotype> .
 _:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cop/hasPhenotype> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> <http://www.w3.org/2000/01/rdf-schema#label> "Organism"@en .
 # 
-# https://purl.org/ontology/gfo/Attributive
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Individual> .
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
-_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo/Property> .
-_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/instanceOf> .
+# https://purl.org/ontology/gfo-light/Attributive
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Individual> .
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo-light/Property> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/instanceOf> .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#onClass> <https://purl.org/ontology/gfo/Entity> .
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#onClass> <https://purl.org/ontology/gfo-light/Entity> .
 _:genid14 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/attributiveOf> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/attributiveOf> .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/2000/01/rdf-schema#comment> "Individuals that are related to other individuals by some kind of dependency relation are called attributives."@en .
-<https://purl.org/ontology/gfo/Attributive> <http://www.w3.org/2000/01/rdf-schema#label> "Attributive"@en .
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/2000/01/rdf-schema#comment> "Individuals that are related to other individuals by some kind of dependency relation are called attributives."@en .
+<https://purl.org/ontology/gfo-light/Attributive> <http://www.w3.org/2000/01/rdf-schema#label> "Attributive"@en .
 # 
-# https://purl.org/ontology/gfo/Category
-<https://purl.org/ontology/gfo/Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Entity> .
-<https://purl.org/ontology/gfo/Category> <http://www.w3.org/2000/01/rdf-schema#comment> "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
-<https://purl.org/ontology/gfo/Category> <http://www.w3.org/2000/01/rdf-schema#label> "Category"@en .
+# https://purl.org/ontology/gfo-light/Category
+<https://purl.org/ontology/gfo-light/Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Entity> .
+<https://purl.org/ontology/gfo-light/Category> <http://www.w3.org/2000/01/rdf-schema#comment> "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
+<https://purl.org/ontology/gfo-light/Category> <http://www.w3.org/2000/01/rdf-schema#label> "Category"@en .
 # 
-# https://purl.org/ontology/gfo/Entity
-<https://purl.org/ontology/gfo/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Everything which exists is called an entity."@en .
-<https://purl.org/ontology/gfo/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+# https://purl.org/ontology/gfo-light/Entity
+<https://purl.org/ontology/gfo-light/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Everything which exists is called an entity."@en .
+<https://purl.org/ontology/gfo-light/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
 # 
-# https://purl.org/ontology/gfo/Individual
-<https://purl.org/ontology/gfo/Individual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Entity> .
-<https://purl.org/ontology/gfo/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo/Category> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/instanceOf> .
+# https://purl.org/ontology/gfo-light/Individual
+<https://purl.org/ontology/gfo-light/Individual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Entity> .
+<https://purl.org/ontology/gfo-light/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/ontology/gfo-light/Category> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/instanceOf> .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/ontology/gfo/Individual> <http://www.w3.org/2000/01/rdf-schema#comment> "Individuals are entities which cannot be further instantiated."@en .
-<https://purl.org/ontology/gfo/Individual> <http://www.w3.org/2000/01/rdf-schema#label> "Individual"@en .
+<https://purl.org/ontology/gfo-light/Individual> <http://www.w3.org/2000/01/rdf-schema#comment> "Individuals are entities which cannot be further instantiated."@en .
+<https://purl.org/ontology/gfo-light/Individual> <http://www.w3.org/2000/01/rdf-schema#label> "Individual"@en .
 # 
-# https://purl.org/ontology/gfo/Process
-<https://purl.org/ontology/gfo/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Individual> .
-<https://purl.org/ontology/gfo/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes are concrete individuals that have a temporal extension. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries."@en .
-<https://purl.org/ontology/gfo/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
+# https://purl.org/ontology/gfo-light/Process
+<https://purl.org/ontology/gfo-light/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Individual> .
+<https://purl.org/ontology/gfo-light/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes are concrete individuals that have a temporal extension. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries."@en .
+<https://purl.org/ontology/gfo-light/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
 # 
-# https://purl.org/ontology/gfo/Property
-<https://purl.org/ontology/gfo/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/ontology/gfo/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Category> .
-<https://purl.org/ontology/gfo/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/ontology/gfo/Attributive> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/instantiatedBy> .
+# https://purl.org/ontology/gfo-light/Property
+<https://purl.org/ontology/gfo-light/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/ontology/gfo-light/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Category> .
+<https://purl.org/ontology/gfo-light/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/ontology/gfo-light/Attributive> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/instantiatedBy> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/ontology/gfo/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Properties are categories that are instantiated by attributives."@en .
-<https://purl.org/ontology/gfo/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
+<https://purl.org/ontology/gfo-light/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Properties are categories that are instantiated by attributives."@en .
+<https://purl.org/ontology/gfo-light/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
 # 
 # https://w3id.org/cop/BasicPhenotypeClass
 <https://w3id.org/cop/BasicPhenotypeClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -484,10 +484,10 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/cop/Phenotype
 <https://w3id.org/cop/Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cop/Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Attributive> .
+<https://w3id.org/cop/Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Attributive> .
 <https://w3id.org/cop/Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
 _:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/cop/PhenotypeClass> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/instanceOf> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/instanceOf> .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/cop/Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
 _:genid24 <http://www.w3.org/2002/07/owl#onClass> <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism> .
@@ -523,14 +523,14 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/cop/PhenotypeClass
 <https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Property> .
+<https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Property> .
 <https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
 _:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067> .
 _:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/cop/hasRepresentationAttribute> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
 _:genid29 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/cop/Phenotype> .
-_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo/instantiatedBy> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/ontology/gfo-light/instantiatedBy> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Phenotype classes are categories whose instances are phenotypes."@en .
 <https://w3id.org/cop/PhenotypeClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Phänotypklassen sind Kategorien, deren Instanzen Phänotypen sind."@de .
@@ -598,7 +598,7 @@ _:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/cop/Phenotyping
 <https://w3id.org/cop/Phenotyping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/cop/Phenotyping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo/Process> .
+<https://w3id.org/cop/Phenotyping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/ontology/gfo-light/Process> .
 <https://w3id.org/cop/Phenotyping> <http://www.w3.org/2000/01/rdf-schema#comment> "Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen."@de .
 <https://w3id.org/cop/Phenotyping> <http://www.w3.org/2000/01/rdf-schema#comment> "Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes."@en .
 <https://w3id.org/cop/Phenotyping> <http://www.w3.org/2000/01/rdf-schema#label> "Phenotyping"@en .
