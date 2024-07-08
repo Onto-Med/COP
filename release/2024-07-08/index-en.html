@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Core Ontology of Phenotyping (COP)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cop","name":"Core Ontology of Phenotyping (COP)", "headline":"Document describing the ontology https://w3id.org/cop", "dateReleased":"Mon Jul 08 10:46:58 UTC 2024", "version":"2024-07-08", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/COP", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Core Ontology of Phenotyping (COP)</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/cop/release/2024-07-08">https://w3id.org/cop/release/2024-07-08</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="https://w3id.org/cop/release/2026-06-11">https://w3id.org/cop/release/2026-06-11</a></dd>
+<dt>Revision:</dt>
+<dd>2024-07-08</dd>
+<dt>Authors:</dt>
+<dd>Alexandr Uciteli</dd><dd>Christoph Beger</dd><dd>Franz Matthies</dd><dd>Konrad Höffner</dd><dd>Ralph Schäfermeier</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Alexandr Uciteli, Christoph Beger, Franz Matthies, Konrad Höffner, Ralph Schäfermeier. Core Ontology of Phenotyping (COP). Revision: 2024-07-08. Retrieved from: https://w3id.org/cop/release/2024-07-08</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/https://zenodo.org/doi/10.5281/zenodo.5205497"><img src ="https://img.shields.io/badge/DOI-https://zenodo.org/doi/10.5281/zenodo.5205497-blue.svg" alt="https://zenodo.org/doi/10.5281/zenodo.5205497" /></a></dd>
+<dt>Vocabulary maintained at:</dt>
+<dd><a href="https://github.com/Onto-Med/COP">https://github.com/Onto-Med/COP</a></dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Core Ontology of Phenotyping: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a>
+   </li>
+   <li>
+      <a href="#/BasicPhenotypeClass" title="https://w3id.org/cop/BasicPhenotypeClass">Basic phenotype class</a>
+   </li>
+   <li>
+      <a href="#/BasicPhenotypeRestriction" title="https://w3id.org/cop/BasicPhenotypeRestriction">Basic phenotype restriction</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254">Boolean</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">Code</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">Derivation Expression</a>
+   </li>
+   <li>
+      <a href="#/DerivedPhenotypeClass" title="https://w3id.org/cop/DerivedPhenotypeClass">Derived phenotype class</a>
+   </li>
+   <li>
+      <a href="#/DerivedPhenotypeRestriction" title="https://w3id.org/cop/DerivedPhenotypeRestriction">Derived phenotype restriction</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">Description</a>
+   </li>
+   <li>
+      <a href="#/DynamicPhenotypeAlgorithm" title="https://w3id.org/cop/DynamicPhenotypeAlgorithm">Dynamic phenotype algorithm</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150">Float</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">Model</a>
+   </li>
+   <li>
+      <a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"
+         title="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">Organism</a>
+   </li>
+   <li>
+      <a href="#/Phenotype" title="https://w3id.org/cop/Phenotype">Phenotype</a>
+   </li>
+   <li>
+      <a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a>
+   </li>
+   <li>
+      <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a>
+   </li>
+   <li>
+      <a href="#/PhenotypeModel" title="https://w3id.org/cop/PhenotypeModel">Phenotype model</a>
+   </li>
+   <li>
+      <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a>
+   </li>
+   <li>
+      <a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a>
+   </li>
+   <li>
+      <a href="#/Phenotyping" title="https://w3id.org/cop/Phenotyping">Phenotyping</a>
+   </li>
+   <li>
+      <a href="#/PhenotypingSoftware" title="https://w3id.org/cop/PhenotypingSoftware">Phenotyping software</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Process" title="https://purl.org/ontology/gfo-light/Process">Process</a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/Property" title="https://purl.org/ontology/gfo-light/Property">Property</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">Range</a>
+   </li>
+   <li>
+      <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a>
+   </li>
+   <li>
+      <a href="#/StaticPhenotypeAlgorithm" title="https://w3id.org/cop/StaticPhenotypeAlgorithm">Static phenotype algorithm</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253">String</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">Synonym</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086">Timestamp Data Type</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">Title</a>
+   </li>
+   <li>
+      <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709"
+         title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">Unit of Measure</a>
+   </li>
+   <li>
+      <a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/applicableFor" title="https://w3id.org/cop/applicableFor">
+         <span>applicable For</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/attributiveOf"
+         title="https://purl.org/ontology/gfo-light/attributiveOf">
+         <span>attributive Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/basicRestrictionOf" title="https://w3id.org/cop/basicRestrictionOf">
+         <span>basic Restriction Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/derivedFrom" title="https://w3id.org/cop/derivedFrom">
+         <span>derived From</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/derivedRestrictionOf" title="https://w3id.org/cop/derivedRestrictionOf">
+         <span>derived Restriction Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/hasAttributive"
+         title="https://purl.org/ontology/gfo-light/hasAttributive">
+         <span>has Attributive</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasExclusion" title="https://w3id.org/cop/hasExclusion">
+         <span>has Exclusion</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasInclusion" title="https://w3id.org/cop/hasInclusion">
+         <span>has Inclusion</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype">
+         <span>has Phenotype</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasProjection" title="https://w3id.org/cop/hasProjection">
+         <span>has Projection</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">
+         <span>has Query Parameter</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/hasRepresentationAttribute" title="https://w3id.org/cop/hasRepresentationAttribute">
+         <span>has Representation Attribute</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/implementedBy" title="https://w3id.org/cop/implementedBy">
+         <span>implemented By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/implements" title="https://w3id.org/cop/implements">
+         <span>implements</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/instanceOf" title="https://purl.org/ontology/gfo-light/instanceOf">
+         <span>instance Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://purl.org/ontology/gfo-light/instantiatedBy"
+         title="https://purl.org/ontology/gfo-light/instantiatedBy">
+         <span>instantiated By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf">
+         <span>phenotype Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/realises" title="https://w3id.org/cop/realises">
+         <span>realises</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/representationAttributeOf" title="https://w3id.org/cop/representationAttributeOf">
+         <span>representation Attribute Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/represents" title="https://w3id.org/cop/represents">
+         <span>represents</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf">
+         <span>restriction Of</span>
+      </a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/contributor" title="http://purl.org/dc/elements/1.1/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi">
+         <span>doi</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
+         <span>homepage</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified">
+         <span>modified</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI">
+         <span>preferred Namespace U R I</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/ref" title="https://w3id.org/cop/ref">
+         <span>ref</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/references" title="http://purl.org/dc/terms/references">
+         <span>references</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository">
+         <span>repository</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Core Ontology of Phenotyping: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Core Ontology of Phenotyping classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Core Ontology of Phenotyping.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a></li>
+  <li><a href="#/BasicPhenotypeClass" title="https://w3id.org/cop/BasicPhenotypeClass">Basic phenotype class</a></li>
+  <li><a href="#/BasicPhenotypeRestriction" title="https://w3id.org/cop/BasicPhenotypeRestriction">Basic phenotype restriction</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254">Boolean</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">Code</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">Derivation Expression</a></li>
+  <li><a href="#/DerivedPhenotypeClass" title="https://w3id.org/cop/DerivedPhenotypeClass">Derived phenotype class</a></li>
+  <li><a href="#/DerivedPhenotypeRestriction" title="https://w3id.org/cop/DerivedPhenotypeRestriction">Derived phenotype restriction</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">Description</a></li>
+  <li><a href="#/DynamicPhenotypeAlgorithm" title="https://w3id.org/cop/DynamicPhenotypeAlgorithm">Dynamic phenotype algorithm</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150">Float</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">Model</a></li>
+  <li><a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism" title="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">Organism</a></li>
+  <li><a href="#/Phenotype" title="https://w3id.org/cop/Phenotype">Phenotype</a></li>
+  <li><a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a></li>
+  <li><a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a></li>
+  <li><a href="#/PhenotypeModel" title="https://w3id.org/cop/PhenotypeModel">Phenotype model</a></li>
+  <li><a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a></li>
+  <li><a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a></li>
+  <li><a href="#/Phenotyping" title="https://w3id.org/cop/Phenotyping">Phenotyping</a></li>
+  <li><a href="#/PhenotypingSoftware" title="https://w3id.org/cop/PhenotypingSoftware">Phenotyping software</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Process" title="https://purl.org/ontology/gfo-light/Process">Process</a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/Property" title="https://purl.org/ontology/gfo-light/Property">Property</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">Range</a></li>
+  <li><a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a></li>
+  <li><a href="#/StaticPhenotypeAlgorithm" title="https://w3id.org/cop/StaticPhenotypeAlgorithm">Static phenotype algorithm</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253">String</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">Synonym</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086">Timestamp Data Type</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">Title</a></li>
+  <li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">Unit of Measure</a></li>
+  <li><a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a></li>
+ </ul>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">
+  <h3>Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275</p>
+  <div class="comment">
+   <span class="markdown">A defined procedure for solving a problem. Applied to a problem-solving procedure implemented in software to be executed by a computer.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/implementedBy" title="https://w3id.org/cop/implementedBy">implemented By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/implements" title="https://w3id.org/cop/implements">implements</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Attributive">
+  <h3>Attributive<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Attributive</p>
+  <div class="comment">
+   <span class="markdown">Individuals that are related to other individuals by some kind of dependency relation are called attributives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Phenotype" title="https://w3id.org/cop/Phenotype">Phenotype</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/attributiveOf" title="https://purl.org/ontology/gfo-light/attributiveOf">attributive Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/hasAttributive" title="https://purl.org/ontology/gfo-light/hasAttributive">has Attributive</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/BasicPhenotypeClass">
+  <h3>Basic phenotype class<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/BasicPhenotypeClass</p>
+  <div class="comment">
+   <span class="markdown">Basic phenotype classes represent phenotypes that have already been determined and for which the data are available.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/basicRestrictionOf" title="https://w3id.org/cop/basicRestrictionOf">basic Restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/BasicPhenotypeRestriction">
+  <h3>Basic phenotype restriction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/BasicPhenotypeRestriction</p>
+  <div class="comment">
+   <span class="markdown">A basic phenotype restriction is a restriction of a basic phenotype class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/basicRestrictionOf" title="https://w3id.org/cop/basicRestrictionOf">basic Restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254">
+  <h3>Boolean<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254</p>
+  <div class="comment">
+   <span class="markdown">The type of an expression with two possible values, "true" and "false".</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Category">
+  <h3>Category<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Category</p>
+  <div class="comment">
+   <span class="markdown">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Property" title="https://purl.org/ontology/gfo-light/Property">Property</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/instantiatedBy" title="https://purl.org/ontology/gfo-light/instantiatedBy">instantiated By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/instanceOf" title="https://purl.org/ontology/gfo-light/instanceOf">instance Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">
+  <h3>Code<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162</p>
+  <div class="comment">
+   <span class="markdown">A symbol or combination of symbols which is assigned to the members of a collection.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">
+  <h3>Computer Program<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</p>
+  <div class="comment">
+   <span class="markdown">A set of coded instructions, which a computer follows in processing data, performing an operation, or solving a logical problem, upon execution of the program.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypingSoftware" title="https://w3id.org/cop/PhenotypingSoftware">Phenotyping software</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/implements" title="https://w3id.org/cop/implements">implements</a> <sup class="type-op" title="object property">op</sup>, <a href="#/realises" title="https://w3id.org/cop/realises">realises</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/implementedBy" title="https://w3id.org/cop/implementedBy">implemented By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">
+  <h3>Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</p>
+  <div class="comment">
+   <span class="markdown">An indication of the form that a value will have. Examples include string, integer, and character.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254">Boolean</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150">Float</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253">String</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086">Timestamp Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">
+  <h3>Derivation Expression<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550</p>
+  <div class="comment">
+   <span class="markdown">A character string containing a formal language expression that specifies how attributes are, should be, or have been derived from input parameters associated with activity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/DerivedPhenotypeClass">
+  <h3>Derived phenotype class<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/DerivedPhenotypeClass</p>
+  <div class="comment">
+   <span class="markdown">Derived phenotype classes model phenotypes that are to be deduced from other phenotypes and thus require a derivation expression/rule/formula to be formulated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/derivedFrom" title="https://w3id.org/cop/derivedFrom">derived From</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/derivedRestrictionOf" title="https://w3id.org/cop/derivedRestrictionOf">derived Restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/DerivedPhenotypeRestriction">
+  <h3>Derived phenotype restriction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/DerivedPhenotypeRestriction</p>
+  <div class="comment">
+   <span class="markdown">A derived phenotype restriction is a restriction of a derived phenotype class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/derivedRestrictionOf" title="https://w3id.org/cop/derivedRestrictionOf">derived Restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">
+  <h3>Description<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365</p>
+  <div class="comment">
+   <span class="markdown">A written or verbal account, representation, statement, or explanation of something.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/DynamicPhenotypeAlgorithm">
+  <h3>Dynamic phenotype algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/DynamicPhenotypeAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">A dynamic phenotype algorithm is a clear specification of instructions for executing an arbitrary phenotype query.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Entity">
+  <h3>Entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Entity</p>
+  <div class="comment">
+   <span class="markdown">Everything which exists is called an entity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasRepresentationAttribute" title="https://w3id.org/cop/hasRepresentationAttribute">has Representation Attribute</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://purl.org/ontology/gfo-light/instanceOf" title="https://purl.org/ontology/gfo-light/instanceOf">instance Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/instantiatedBy" title="https://purl.org/ontology/gfo-light/instantiatedBy">instantiated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#/representationAttributeOf" title="https://w3id.org/cop/representationAttributeOf">representation Attribute Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150">
+  <h3>Float<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150</p>
+  <div class="comment">
+   <span class="markdown">A number that can have its decimal point in any position.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Individual">
+  <h3>Individual<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Individual</p>
+  <div class="comment">
+   <span class="markdown">Individuals are entities which cannot be further instantiated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>, <a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism" title="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">Organism</a> <sup class="type-c" title="class">c</sup>, <a href="#https://purl.org/ontology/gfo-light/Process" title="https://purl.org/ontology/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">
+  <h3>Model<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866</p>
+  <div class="comment">
+   <span class="markdown">A representation of something, often idealized or modified to make it conceptually easier to understand.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeModel" title="https://w3id.org/cop/PhenotypeModel">Phenotype model</a> <sup class="type-c" title="class">c</sup>, <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">
+  <h3>Organism<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype">has Phenotype</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf">phenotype Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Phenotype">
+  <h3>Phenotype<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/Phenotype</p>
+  <div class="comment">
+   <span class="markdown">A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf">phenotype Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype">has Phenotype</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypeAlgorithm">
+  <h3>Phenotype algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypeAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">A phenotype algorithm is a clear specification of instructions for executing a phenotype query, i.e., identifying individuals matching the query criteria (i.e., meeting all the inclusion but none of the exclusion criteria) and deriving/outputting further phenotypes (projection entries).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/DynamicPhenotypeAlgorithm" title="https://w3id.org/cop/DynamicPhenotypeAlgorithm">Dynamic phenotype algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#/StaticPhenotypeAlgorithm" title="https://w3id.org/cop/StaticPhenotypeAlgorithm">Static phenotype algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/applicableFor" title="https://w3id.org/cop/applicableFor">applicable For</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypeClass">
+  <h3>Phenotype class<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypeClass</p>
+  <div class="comment">
+   <span class="markdown">Phenotype classes are categories whose instances are phenotypes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Property" title="https://purl.org/ontology/gfo-light/Property">Property</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a> <sup class="type-c" title="class">c</sup>, <a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/derivedFrom" title="https://w3id.org/cop/derivedFrom">derived From</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasExclusion" title="https://w3id.org/cop/hasExclusion">has Exclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasInclusion" title="https://w3id.org/cop/hasInclusion">has Inclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProjection" title="https://w3id.org/cop/hasProjection">has Projection</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">has Query Parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#/represents" title="https://w3id.org/cop/represents">represents</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypeModel">
+  <h3>Phenotype model<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypeModel</p>
+  <div class="comment">
+   <span class="markdown">A phenotype model is a formal representation of delimited phenotypic knowledge (i.e., phenotype classes, their attributes, and relationships).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/represents" title="https://w3id.org/cop/represents">represents</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypeQuery">
+  <h3>Phenotype query<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypeQuery</p>
+  <div class="comment">
+   <span class="markdown">A phenotype query is a specification of certain phenotype classes as inclusion or exclusion criteria or as projection (output) entries.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasExclusion" title="https://w3id.org/cop/hasExclusion">has Exclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasInclusion" title="https://w3id.org/cop/hasInclusion">has Inclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProjection" title="https://w3id.org/cop/hasProjection">has Projection</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">has Query Parameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/applicableFor" title="https://w3id.org/cop/applicableFor">applicable For</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypeRestriction">
+  <h3>Phenotype restriction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypeRestriction</p>
+  <div class="comment">
+   <span class="markdown">A phenotype class whose extension (the set of instances, i.e., phenotypes) is restricted to a certain value range is called phenotype restriction.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/BasicPhenotypeRestriction" title="https://w3id.org/cop/BasicPhenotypeRestriction">Basic phenotype restriction</a> <sup class="type-c" title="class">c</sup>, <a href="#/DerivedPhenotypeRestriction" title="https://w3id.org/cop/DerivedPhenotypeRestriction">Derived phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf">restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Phenotyping">
+  <h3>Phenotyping<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/Phenotyping</p>
+  <div class="comment">
+   <span class="markdown">Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Process" title="https://purl.org/ontology/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/PhenotypingSoftware">
+  <h3>Phenotyping software<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/PhenotypingSoftware</p>
+  <div class="comment">
+   <span class="markdown">Phenotyping software is a software implementing a phenotype algorithm. A run of the software (implemented phenotype algorithm) realises a phenotyping process.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Process">
+  <h3>Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Process</p>
+  <div class="comment">
+   <span class="markdown">Processes are concrete individuals that have a temporal extension. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Individual" title="https://purl.org/ontology/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Phenotyping" title="https://w3id.org/cop/Phenotyping">Phenotyping</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/realises" title="https://w3id.org/cop/realises">realises</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/Property">
+  <h3>Property<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/Property</p>
+  <div class="comment">
+   <span class="markdown">Properties are categories that are instantiated by attributives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">
+  <h3>Range<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013</p>
+  <div class="comment">
+   <span class="markdown">The difference between the lowest and highest numerical values; the limits or scale of variation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/RepresentationEntity">
+  <h3>Representation entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/RepresentationEntity</p>
+  <div class="comment">
+   <span class="markdown">Representation entity is a model, specification or description.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">Code</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">Derivation Expression</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">Description</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">Model</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">Range</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">Synonym</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">Title</a> <sup class="type-c" title="class">c</sup>, <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">Unit of Measure</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/representationAttributeOf" title="https://w3id.org/cop/representationAttributeOf">representation Attribute Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasRepresentationAttribute" title="https://w3id.org/cop/hasRepresentationAttribute">has Representation Attribute</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/StaticPhenotypeAlgorithm">
+  <h3>Static phenotype algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/StaticPhenotypeAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">A static phenotype algorithm is a clear specification of instructions for executing exactly one specific phenotype query.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253">
+  <h3>String<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253</p>
+  <div class="comment">
+   <span class="markdown">An expression consisting of a linear sequence of symbols (characters or words or phrases).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">
+  <h3>Synonym<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469</p>
+  <div class="comment">
+   <span class="markdown">A word having the same or nearly the same meaning as another word or other words in a language; a word or an expression that serves as a figurative or symbolic substitute for another.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086">
+  <h3>Timestamp Data Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086</p>
+  <div class="comment">
+   <span class="markdown">A variation of the Date datatype that's useful for storing very precise datetime values, down to small fractions of seconds. The Timestamp datatype stores all the information that the Date datatype stores, but also includes fractional seconds.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">Data Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">
+  <h3>Title<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067</p>
+  <div class="comment">
+   <span class="markdown">An identifying designation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">
+  <h3>Unit of Measure<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709</p>
+  <div class="comment">
+   <span class="markdown">A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/UnrestrictedPhenotypeClass">
+  <h3>Unrestricted phenotype class<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/UnrestrictedPhenotypeClass</p>
+  <div class="comment">
+   <span class="markdown">A phenotype class whose extension (the set of instances, i.e., phenotypes) is not restricted to a certain value range is called unrestricted phenotype class.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/BasicPhenotypeClass" title="https://w3id.org/cop/BasicPhenotypeClass">Basic phenotype class</a> <sup class="type-c" title="class">c</sup>, <a href="#/DerivedPhenotypeClass" title="https://w3id.org/cop/DerivedPhenotypeClass">Derived phenotype class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf">restriction Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/applicableFor" title="https://w3id.org/cop/applicableFor"> <span>applicable For</span> </a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/attributiveOf" title="https://purl.org/ontology/gfo-light/attributiveOf"> <span>attributive Of</span> </a></li>
+  <li><a href="#/basicRestrictionOf" title="https://w3id.org/cop/basicRestrictionOf"> <span>basic Restriction Of</span> </a></li>
+  <li><a href="#/derivedFrom" title="https://w3id.org/cop/derivedFrom"> <span>derived From</span> </a></li>
+  <li><a href="#/derivedRestrictionOf" title="https://w3id.org/cop/derivedRestrictionOf"> <span>derived Restriction Of</span> </a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/hasAttributive" title="https://purl.org/ontology/gfo-light/hasAttributive"> <span>has Attributive</span> </a></li>
+  <li><a href="#/hasExclusion" title="https://w3id.org/cop/hasExclusion"> <span>has Exclusion</span> </a></li>
+  <li><a href="#/hasInclusion" title="https://w3id.org/cop/hasInclusion"> <span>has Inclusion</span> </a></li>
+  <li><a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype"> <span>has Phenotype</span> </a></li>
+  <li><a href="#/hasProjection" title="https://w3id.org/cop/hasProjection"> <span>has Projection</span> </a></li>
+  <li><a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter"> <span>has Query Parameter</span> </a></li>
+  <li><a href="#/hasRepresentationAttribute" title="https://w3id.org/cop/hasRepresentationAttribute"> <span>has Representation Attribute</span> </a></li>
+  <li><a href="#/implementedBy" title="https://w3id.org/cop/implementedBy"> <span>implemented By</span> </a></li>
+  <li><a href="#/implements" title="https://w3id.org/cop/implements"> <span>implements</span> </a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/instanceOf" title="https://purl.org/ontology/gfo-light/instanceOf"> <span>instance Of</span> </a></li>
+  <li><a href="#https://purl.org/ontology/gfo-light/instantiatedBy" title="https://purl.org/ontology/gfo-light/instantiatedBy"> <span>instantiated By</span> </a></li>
+  <li><a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf"> <span>phenotype Of</span> </a></li>
+  <li><a href="#/realises" title="https://w3id.org/cop/realises"> <span>realises</span> </a></li>
+  <li><a href="#/representationAttributeOf" title="https://w3id.org/cop/representationAttributeOf"> <span>representation Attribute Of</span> </a></li>
+  <li><a href="#/represents" title="https://w3id.org/cop/represents"> <span>represents</span> </a></li>
+  <li><a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf"> <span>restriction Of</span> </a></li>
+ </ul>
+ <div class="entity" id="/applicableFor">
+  <h3>applicable For<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/applicableFor</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeAlgorithm" title="https://w3id.org/cop/PhenotypeAlgorithm">Phenotype algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/attributiveOf">
+  <h3>attributive Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/attributiveOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf">phenotype Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/hasAttributive" title="https://purl.org/ontology/gfo-light/hasAttributive">has Attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/basicRestrictionOf">
+  <h3>basic Restriction Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/basicRestrictionOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf">restriction Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/BasicPhenotypeRestriction" title="https://w3id.org/cop/BasicPhenotypeRestriction">Basic phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/BasicPhenotypeClass" title="https://w3id.org/cop/BasicPhenotypeClass">Basic phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/derivedFrom">
+  <h3>derived From<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/derivedFrom</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/DerivedPhenotypeClass" title="https://w3id.org/cop/DerivedPhenotypeClass">Derived phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/derivedRestrictionOf">
+  <h3>derived Restriction Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/derivedRestrictionOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/restrictionOf" title="https://w3id.org/cop/restrictionOf">restriction Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/DerivedPhenotypeRestriction" title="https://w3id.org/cop/DerivedPhenotypeRestriction">Derived phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/DerivedPhenotypeClass" title="https://w3id.org/cop/DerivedPhenotypeClass">Derived phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/hasAttributive">
+  <h3>has Attributive<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/hasAttributive</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype">has Phenotype</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Attributive" title="https://purl.org/ontology/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/attributiveOf" title="https://purl.org/ontology/gfo-light/attributiveOf">attributive Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasExclusion">
+  <h3>has Exclusion<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasExclusion</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">has Query Parameter</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasInclusion">
+  <h3>has Inclusion<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasInclusion</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">has Query Parameter</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasPhenotype">
+  <h3>has Phenotype<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasPhenotype</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/hasAttributive" title="https://purl.org/ontology/gfo-light/hasAttributive">has Attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism" title="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">Organism</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Phenotype" title="https://w3id.org/cop/Phenotype">Phenotype</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/phenotypeOf" title="https://w3id.org/cop/phenotypeOf">phenotype Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasProjection">
+  <h3>has Projection<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasProjection</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasQueryParameter" title="https://w3id.org/cop/hasQueryParameter">has Query Parameter</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasQueryParameter">
+  <h3>has Query Parameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasQueryParameter</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topObjectProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topObjectProperty">top Object Property</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasExclusion" title="https://w3id.org/cop/hasExclusion">has Exclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasInclusion" title="https://w3id.org/cop/hasInclusion">has Inclusion</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProjection" title="https://w3id.org/cop/hasProjection">has Projection</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeQuery" title="https://w3id.org/cop/PhenotypeQuery">Phenotype query</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasRepresentationAttribute">
+  <h3>has Representation Attribute<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/hasRepresentationAttribute</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/representationAttributeOf" title="https://w3id.org/cop/representationAttributeOf">representation Attribute Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/implementedBy">
+  <h3>implemented By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/implementedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/implements" title="https://w3id.org/cop/implements">implements</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/implements">
+  <h3>implements<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/implements</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/implementedBy" title="https://w3id.org/cop/implementedBy">implemented By</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/instanceOf">
+  <h3>instance Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/instanceOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/instantiatedBy" title="https://purl.org/ontology/gfo-light/instantiatedBy">instantiated By</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="https://purl.org/ontology/gfo-light/instantiatedBy">
+  <h3>instantiated By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://purl.org/ontology/gfo-light/instantiatedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Category" title="https://purl.org/ontology/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/instanceOf" title="https://purl.org/ontology/gfo-light/instanceOf">instance Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/phenotypeOf">
+  <h3>phenotype Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/phenotypeOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/attributiveOf" title="https://purl.org/ontology/gfo-light/attributiveOf">attributive Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Phenotype" title="https://w3id.org/cop/Phenotype">Phenotype</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism" title="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">Organism</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasPhenotype" title="https://w3id.org/cop/hasPhenotype">has Phenotype</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/realises">
+  <h3>realises<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/realises</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146" title="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">Computer Program</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Process" title="https://purl.org/ontology/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/representationAttributeOf">
+  <h3>representation Attribute Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/representationAttributeOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/RepresentationEntity" title="https://w3id.org/cop/RepresentationEntity">Representation entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://purl.org/ontology/gfo-light/Entity" title="https://purl.org/ontology/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasRepresentationAttribute" title="https://w3id.org/cop/hasRepresentationAttribute">has Representation Attribute</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/represents">
+  <h3>represents<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/represents</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeModel" title="https://w3id.org/cop/PhenotypeModel">Phenotype model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/PhenotypeClass" title="https://w3id.org/cop/PhenotypeClass">Phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/restrictionOf">
+  <h3>restriction Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/restrictionOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/basicRestrictionOf" title="https://w3id.org/cop/basicRestrictionOf">basic Restriction Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/derivedRestrictionOf" title="https://w3id.org/cop/derivedRestrictionOf">derived Restriction Of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/PhenotypeRestriction" title="https://w3id.org/cop/PhenotypeRestriction">Phenotype restriction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/UnrestrictedPhenotypeClass" title="https://w3id.org/cop/UnrestrictedPhenotypeClass">Unrestricted phenotype class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/elements/1.1/contributor" title="http://purl.org/dc/elements/1.1/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi"> <span>doi</span> </a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified"> <span>modified</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
+  <li><a href="#/ref" title="https://w3id.org/cop/ref"> <span>ref</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/references" title="http://purl.org/dc/terms/references"> <span>references</span> </a></li>
+  <li><a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository"> <span>repository</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/contributor">
+  <h3>contributor<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/doi">
+  <h3>doi<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/doi</p>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
+  <h3>homepage<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/modified">
+  <h3>modified<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/modified</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceURI">
+  <h3>preferred Namespace U R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceURI</p>
+ </div>
+ <div class="entity" id="/ref">
+  <h3>ref<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/cop/ref</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/references">
+  <h3>references<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/references</p>
+ </div>
+ <div class="entity" id="http://usefulinc.com/ns/doap#repository">
+  <h3>repository<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://usefulinc.com/ns/doap#repository</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+   
+
+<!--CHANGELOG SECTION-->
+   <div id="changelog">null</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
