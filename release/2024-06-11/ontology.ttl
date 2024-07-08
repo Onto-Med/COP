@@ -16,17 +16,19 @@
                                                                   "Ralph Schäfermeier" ;
                         <http://purl.org/dc/elements/1.1/description> "Die Core Ontology of Phenotyping (COP) definiert zentrale Entitäten und ihre Beziehungen, die für die Modellierung phänotypischen Wissens und die Entwicklung von Software für die Phänotypisierung relevant sind."@de ,
                                                                       "The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software."@en ;
+                        <http://purl.org/dc/elements/1.1/modified> "2024-06-11"^^xsd:date ;
                         <http://purl.org/dc/elements/1.1/title> "Core Ontology of Phenotyping (COP)"@en ;
                         <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
                         <http://purl.org/dc/terms/references> "GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO" ,
                                                               "General Formal Ontology (GFO): https://onto-med.github.io/GFO; https://www.onto-med.de/ontologies/gfo" ,
                                                               "National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT" ;
+                        <http://purl.org/ontology/bibo/doi> <https://zenodo.org/doi/10.5281/zenodo.5205497> ;
                         <http://purl.org/vocab/vann/preferredNamespacePrefix> "cop" ;
                         <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/cop/" ;
                         <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/COP> ;
                         rdfs:label "Core Ontology of Phenotyping"@en ;
-                        rdfs:seeAlso <https://zenodo.org/doi/10.5281/zenodo.5205497> ;
-                        owl:versionInfo "2024-06-11" ;
+                        owl:priorVersion <https://w3id.org/cop/release/v0.2.1> ;
+                        owl:versionInfo "2024-06-11"^^xsd:date ;
                         <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/COP" .
 
 #################################################################
@@ -49,6 +51,10 @@
 <http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
@@ -59,6 +65,10 @@
 
 ###  http://purl.org/dc/terms/references
 <http://purl.org/dc/terms/references> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix

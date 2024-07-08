@@ -8,17 +8,19 @@
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/creator> "Ralph Schäfermeier" .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/description> "Die Core Ontology of Phenotyping (COP) definiert zentrale Entitäten und ihre Beziehungen, die für die Modellierung phänotypischen Wissens und die Entwicklung von Software für die Phänotypisierung relevant sind."@de .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/description> "The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software."@en .
+<https://w3id.org/cop> <http://purl.org/dc/elements/1.1/modified> "2024-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://purl.org/dc/elements/1.1/title> "Core Ontology of Phenotyping (COP)"@en .
 <https://w3id.org/cop> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
 <https://w3id.org/cop> <http://purl.org/dc/terms/references> "GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO" .
 <https://w3id.org/cop> <http://purl.org/dc/terms/references> "General Formal Ontology (GFO): https://onto-med.github.io/GFO; https://www.onto-med.de/ontologies/gfo" .
 <https://w3id.org/cop> <http://purl.org/dc/terms/references> "National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT" .
+<https://w3id.org/cop> <http://purl.org/ontology/bibo/doi> <https://zenodo.org/doi/10.5281/zenodo.5205497> .
 <https://w3id.org/cop> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cop" .
 <https://w3id.org/cop> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/cop/" .
 <https://w3id.org/cop> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/COP> .
 <https://w3id.org/cop> <http://www.w3.org/2000/01/rdf-schema#label> "Core Ontology of Phenotyping"@en .
-<https://w3id.org/cop> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://zenodo.org/doi/10.5281/zenodo.5205497> .
-<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionInfo> "2024-06-11" .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/cop/release/v0.2.1> .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionInfo> "2024-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/COP" .
 # 
 # 
@@ -41,6 +43,9 @@
 # http://purl.org/dc/elements/1.1/description
 <http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -49,6 +54,9 @@
 # 
 # http://purl.org/dc/terms/references
 <http://purl.org/dc/terms/references> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

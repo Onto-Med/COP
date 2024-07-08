@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cop","name":"Core Ontology of Phenotyping (COP)", "headline":"Document describing the ontology https://w3id.org/cop", "dateReleased":"Fri Jul 05 13:11:05 UTC 2024", "version":"2024-06-11", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/COP", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cop","name":"Core Ontology of Phenotyping (COP)", "headline":"Document describing the ontology https://w3id.org/cop", "dateReleased":"Mon Jul 08 10:30:30 UTC 2024", "version":"2024-06-11", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/COP", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -71,17 +71,18 @@ $(function(){
 <dl>
 <dt>This version:</dt>
 <dd><a href="https://w3id.org/cop/release/2024-06-11">https://w3id.org/cop/release/2024-06-11</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="https://w3id.org/cop/release/v0.2.1">https://w3id.org/cop/release/v0.2.1</a></dd>
 <dt>Revision:</dt>
 <dd>2024-06-11</dd>
 <dt>Authors:</dt>
 <dd>Alexandr Uciteli</dd><dd>Christoph Beger</dd><dd>Franz Matthies</dd><dd>Konrad Höffner</dd><dd>Ralph Schäfermeier</dd>
 
-<dt>See also:</dt>
-<dd><a href="https://zenodo.org/doi/10.5281/zenodo.5205497">https://zenodo.org/doi/10.5281/zenodo.5205497</a></dd>
-
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
 <dd>Alexandr Uciteli, Christoph Beger, Franz Matthies, Konrad Höffner, Ralph Schäfermeier. Core Ontology of Phenotyping (COP). Revision: 2024-06-11. Retrieved from: https://w3id.org/cop/release/2024-06-11</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/https://zenodo.org/doi/10.5281/zenodo.5205497"><img src ="https://img.shields.io/badge/DOI-https://zenodo.org/doi/10.5281/zenodo.5205497-blue.svg" alt="https://zenodo.org/doi/10.5281/zenodo.5205497" /></a></dd>
 <dt>Vocabulary maintained at:</dt>
 <dd><a href="https://github.com/Onto-Med/COP">https://github.com/Onto-Med/COP</a></dd>
 </dl>
@@ -364,6 +365,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi">
+         <span>doi</span>
+      </a>
+   </li>
+   <li>
       <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
          <span>homepage</span>
       </a>
@@ -371,6 +377,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
          <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified">
+         <span>modified</span>
       </a>
    </li>
    <li>
@@ -1850,8 +1861,10 @@ This section provides details for each class and property defined by Core Ontolo
   <li><a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created"> <span>created</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi"> <span>doi</span> </a></li>
   <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified"> <span>modified</span> </a></li>
   <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
   <li><a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
   <li><a href="#/ref" title="https://w3id.org/cop/ref"> <span>ref</span> </a></li>
@@ -1875,6 +1888,10 @@ This section provides details for each class and property defined by Core Ontolo
   <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
  </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/doi">
+  <h3>doi<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/doi</p>
+ </div>
  <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
   <h3>homepage<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
@@ -1882,6 +1899,10 @@ This section provides details for each class and property defined by Core Ontolo
  <div class="entity" id="http://purl.org/dc/terms/license">
   <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/modified">
+  <h3>modified<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/modified</p>
  </div>
  <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
   <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
@@ -1914,6 +1935,389 @@ This section provides details for each class and property defined by Core Ontolo
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 </div>
 </div>
+</div>
+   
+
+<!--CHANGELOG SECTION-->
+   <div id="changelog"><div id="changelog">
+<h2 id="changes" class="list">Changes from last version</h2>
+<h3 id="changeClass" class="list">Classes</h3>
+<details><summary><u>Added classes</u></summary>
+<ul><li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275</a>
+<ul>
+<li><li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</a>
+<ul>
+<li><li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645</li>
+</ul>
+</li>
+<li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/RepresentationEntity</li>
+<li></ul>
+</li>
+<li><a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo/Individual</li>
+<li></ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Attributive">https://purl.org/ontology/gfo/Attributive</a>
+<ul>
+<li><li><li>Added: SubClass of https://purl.org/ontology/gfo/Individual</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Category">https://purl.org/ontology/gfo/Category</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Entity">https://purl.org/ontology/gfo/Entity</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Individual">https://purl.org/ontology/gfo/Individual</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Process">https://purl.org/ontology/gfo/Process</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo/Individual</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Property">https://purl.org/ontology/gfo/Property</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo/Category</li>
+</ul>
+</li>
+<li><a href="#/BasicPhenotypeClass">https://w3id.org/cop/BasicPhenotypeClass</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/UnrestrictedPhenotypeClass</li>
+<li><li></ul>
+</li>
+<li><a href="#/BasicPhenotypeRestriction">https://w3id.org/cop/BasicPhenotypeRestriction</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/PhenotypeRestriction</li>
+<li></ul>
+</li>
+<li><a href="#/DerivedPhenotypeClass">https://w3id.org/cop/DerivedPhenotypeClass</a>
+<ul>
+<li><li><li>Added: SubClass of https://w3id.org/cop/UnrestrictedPhenotypeClass</li>
+</ul>
+</li>
+<li><a href="#/DerivedPhenotypeRestriction">https://w3id.org/cop/DerivedPhenotypeRestriction</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/PhenotypeRestriction</li>
+<li></ul>
+</li>
+<li><a href="#/DynamicPhenotypeAlgorithm">https://w3id.org/cop/DynamicPhenotypeAlgorithm</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/PhenotypeAlgorithm</li>
+</ul>
+</li>
+<li><a href="#/Phenotype">https://w3id.org/cop/Phenotype</a>
+<ul>
+<li><li><li>Added: SubClass of https://purl.org/ontology/gfo/Attributive</li>
+</ul>
+</li>
+<li><a href="#/PhenotypeAlgorithm">https://w3id.org/cop/PhenotypeAlgorithm</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275</li>
+<li><li></ul>
+</li>
+<li><a href="#/PhenotypeClass">https://w3id.org/cop/PhenotypeClass</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo/Property</li>
+<li></ul>
+</li>
+<li><a href="#/PhenotypeModel">https://w3id.org/cop/PhenotypeModel</a>
+<ul>
+<li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866</li>
+<li></ul>
+</li>
+<li><a href="#/PhenotypeQuery">https://w3id.org/cop/PhenotypeQuery</a>
+<ul>
+<li><li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866</li>
+</ul>
+</li>
+<li><a href="#/PhenotypeRestriction">https://w3id.org/cop/PhenotypeRestriction</a>
+<ul>
+<li><li>Added: SubClass of https://w3id.org/cop/PhenotypeClass</li>
+<li></ul>
+</li>
+<li><a href="#/Phenotyping">https://w3id.org/cop/Phenotyping</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo/Process</li>
+</ul>
+</li>
+<li><a href="#/PhenotypingSoftware">https://w3id.org/cop/PhenotypingSoftware</a>
+<ul>
+<li><li><li>Added: SubClass of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</li>
+</ul>
+</li>
+<li><a href="#/RepresentationEntity">https://w3id.org/cop/RepresentationEntity</a>
+</li>
+<li><a href="#/StaticPhenotypeAlgorithm">https://w3id.org/cop/StaticPhenotypeAlgorithm</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/PhenotypeAlgorithm</li>
+<li></ul>
+</li>
+<li><a href="#/UnrestrictedPhenotypeClass">https://w3id.org/cop/UnrestrictedPhenotypeClass</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/cop/PhenotypeClass</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted classes</u></summary>
+<ul><li><a href="#http://www.w3.org/2002/07/owl#Thing">http://www.w3.org/2002/07/owl#Thing</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Code_System">https://www.smith.care/cop#Code_System</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Combined_Phenotype">https://www.smith.care/cop#Combined_Phenotype</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Composite_Phenotype">https://www.smith.care/cop#Composite_Phenotype</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Derived_Phenotype">https://www.smith.care/cop#Derived_Phenotype</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class">https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class">https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Non_restricted_Phenotype_Class">https://www.smith.care/cop#Non_restricted_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class">https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Phenotype">https://www.smith.care/cop#Phenotype</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Phenotype_Category">https://www.smith.care/cop#Phenotype_Category</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Phenotype_Class">https://www.smith.care/cop#Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Restricted_Combined_Phenotype_Class">https://www.smith.care/cop#Restricted_Combined_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Restricted_Derived_Phenotype_Class">https://www.smith.care/cop#Restricted_Derived_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Restricted_Phenotype_Class">https://www.smith.care/cop#Restricted_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Restricted_Single_Phenotype_Class">https://www.smith.care/cop#Restricted_Single_Phenotype_Class</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Single_Phenotype">https://www.smith.care/cop#Single_Phenotype</a>
+</li>
+<li><a href="#https://www.smith.care/cop#Single_Phenotype_Group">https://www.smith.care/cop#Single_Phenotype_Group</a>
+</li>
+</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
+<details><summary><u>Added object properties</u></summary>
+<ul><li><a href="#https://purl.org/ontology/gfo/attributiveOf">https://purl.org/ontology/gfo/attributiveOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo/attributiveOf&gt; &lt;https://purl.org/ontology/gfo/hasAttributive&gt;)</li>
+<li>Added: domain https://purl.org/ontology/gfo/Attributive</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/hasAttributive">https://purl.org/ontology/gfo/hasAttributive</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo/attributiveOf&gt; &lt;https://purl.org/ontology/gfo/hasAttributive&gt;)</li>
+<li>Added: Range https://purl.org/ontology/gfo/Attributive</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/instanceOf">https://purl.org/ontology/gfo/instanceOf</a>
+<ul>
+<li>Added: Range https://purl.org/ontology/gfo/Category</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo/instanceOf&gt; &lt;https://purl.org/ontology/gfo/instantiatedBy&gt;)</li>
+<li>Added: domain https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/instantiatedBy">https://purl.org/ontology/gfo/instantiatedBy</a>
+<ul>
+<li>Added: domain https://purl.org/ontology/gfo/Category</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo/instanceOf&gt; &lt;https://purl.org/ontology/gfo/instantiatedBy&gt;)</li>
+<li>Added: Range https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#/applicableFor">https://w3id.org/cop/applicableFor</a>
+<ul>
+<li>Added: Range https://w3id.org/cop/PhenotypeQuery</li>
+<li>Added: domain https://w3id.org/cop/PhenotypeAlgorithm</li>
+</ul>
+</li>
+<li><a href="#/basicRestrictionOf">https://w3id.org/cop/basicRestrictionOf</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/BasicPhenotypeRestriction</li>
+<li>Added: SubProperty of https://w3id.org/cop/restrictionOf</li>
+<li>Added: Range https://w3id.org/cop/BasicPhenotypeClass</li>
+</ul>
+</li>
+<li><a href="#/derivedFrom">https://w3id.org/cop/derivedFrom</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/DerivedPhenotypeClass</li>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+</ul>
+</li>
+<li><a href="#/derivedRestrictionOf">https://w3id.org/cop/derivedRestrictionOf</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/DerivedPhenotypeRestriction</li>
+<li>Added: SubProperty of https://w3id.org/cop/restrictionOf</li>
+<li>Added: Range https://w3id.org/cop/DerivedPhenotypeClass</li>
+</ul>
+</li>
+<li><a href="#/hasExclusion">https://w3id.org/cop/hasExclusion</a>
+<ul>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+<li>Added: SubProperty of https://w3id.org/cop/hasQueryParameter</li>
+<li>Added: domain https://w3id.org/cop/PhenotypeQuery</li>
+</ul>
+</li>
+<li><a href="#/hasInclusion">https://w3id.org/cop/hasInclusion</a>
+<ul>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+<li>Added: domain https://w3id.org/cop/PhenotypeQuery</li>
+<li>Added: SubProperty of https://w3id.org/cop/hasQueryParameter</li>
+</ul>
+</li>
+<li><a href="#/hasPhenotype">https://w3id.org/cop/hasPhenotype</a>
+<ul>
+<li>Added: SubProperty of https://purl.org/ontology/gfo/hasAttributive</li>
+<li>Added: Range https://w3id.org/cop/Phenotype</li>
+<li>Added: domain http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/hasPhenotype&gt; &lt;https://w3id.org/cop/phenotypeOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#/hasProjection">https://w3id.org/cop/hasProjection</a>
+<ul>
+<li>Added: SubProperty of https://w3id.org/cop/hasQueryParameter</li>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+<li>Added: domain https://w3id.org/cop/PhenotypeQuery</li>
+</ul>
+</li>
+<li><a href="#/hasQueryParameter">https://w3id.org/cop/hasQueryParameter</a>
+<ul>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+<li>Added: domain https://w3id.org/cop/PhenotypeQuery</li>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topObjectProperty</li>
+</ul>
+</li>
+<li><a href="#/hasRepresentationAttribute">https://w3id.org/cop/hasRepresentationAttribute</a>
+<ul>
+<li>Added: Range https://w3id.org/cop/RepresentationEntity</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/hasRepresentationAttribute&gt; &lt;https://w3id.org/cop/representationAttributeOf&gt;)</li>
+<li>Added: domain https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#/implementedBy">https://w3id.org/cop/implementedBy</a>
+<ul>
+<li>Added: Range http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</li>
+<li>Added: domain http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/implementedBy&gt; &lt;https://w3id.org/cop/implements&gt;)</li>
+</ul>
+</li>
+<li><a href="#/implements">https://w3id.org/cop/implements</a>
+<ul>
+<li>Added: Range http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275</li>
+<li>Added: domain http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/implementedBy&gt; &lt;https://w3id.org/cop/implements&gt;)</li>
+</ul>
+</li>
+<li><a href="#/phenotypeOf">https://w3id.org/cop/phenotypeOf</a>
+<ul>
+<li>Added: Range http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism</li>
+<li>Added: domain https://w3id.org/cop/Phenotype</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/hasPhenotype&gt; &lt;https://w3id.org/cop/phenotypeOf&gt;)</li>
+<li>Added: SubProperty of https://purl.org/ontology/gfo/attributiveOf</li>
+</ul>
+</li>
+<li><a href="#/realises">https://w3id.org/cop/realises</a>
+<ul>
+<li>Added: domain http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</li>
+<li>Added: Range https://purl.org/ontology/gfo/Process</li>
+</ul>
+</li>
+<li><a href="#/representationAttributeOf">https://w3id.org/cop/representationAttributeOf</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/RepresentationEntity</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/cop/hasRepresentationAttribute&gt; &lt;https://w3id.org/cop/representationAttributeOf&gt;)</li>
+<li>Added: Range https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#/represents">https://w3id.org/cop/represents</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/PhenotypeModel</li>
+<li>Added: Range https://w3id.org/cop/PhenotypeClass</li>
+</ul>
+</li>
+<li><a href="#/restrictionOf">https://w3id.org/cop/restrictionOf</a>
+<ul>
+<li>Added: domain https://w3id.org/cop/PhenotypeRestriction</li>
+<li>Added: Range https://w3id.org/cop/UnrestrictedPhenotypeClass</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted object properties</u></summary>
+<ul><li><a href="#https://www.smith.care/cop#has_part">https://www.smith.care/cop#has_part</a>
+</li>
+</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
+<details><summary><u>Deleted data properties</u></summary>
+<ul><li><a href="#http://www.w3.org/2002/07/owl#topDataProperty">http://www.w3.org/2002/07/owl#topDataProperty</a>
+</li>
+<li><a href="#https://www.smith.care/cop#has_value">https://www.smith.care/cop#has_value</a>
+</li>
+</ul></details></div>
 </div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

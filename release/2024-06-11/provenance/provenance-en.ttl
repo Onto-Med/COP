@@ -10,6 +10,7 @@
 	 prov:wasAttributedTo :agent3;
 	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasRevisionOf <https://w3id.org/cop/release/v0.2.1>;
 .
 :agent0 a prov:Agent; foaf:name "Alexandr Uciteli".
 :agent1 a prov:Agent; foaf:name "Christoph Beger".

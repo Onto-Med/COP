@@ -7,6 +7,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -22,17 +23,19 @@
         <dc:creator>Ralph Schäfermeier</dc:creator>
         <dc:description xml:lang="de">Die Core Ontology of Phenotyping (COP) definiert zentrale Entitäten und ihre Beziehungen, die für die Modellierung phänotypischen Wissens und die Entwicklung von Software für die Phänotypisierung relevant sind.</dc:description>
         <dc:description xml:lang="en">The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software.</dc:description>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</dc:modified>
         <dc:title xml:lang="en">Core Ontology of Phenotyping (COP)</dc:title>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <terms:references>GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO</terms:references>
         <terms:references>General Formal Ontology (GFO): https://onto-med.github.io/GFO; https://www.onto-med.de/ontologies/gfo</terms:references>
         <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT</terms:references>
+        <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
         <vann:preferredNamespacePrefix>cop</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <doap:repository rdf:resource="https://github.com/Onto-Med/COP"/>
         <rdfs:label xml:lang="en">Core Ontology of Phenotyping</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
-        <owl:versionInfo>2024-06-11</owl:versionInfo>
+        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/v0.2.1"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</owl:versionInfo>
         <foaf:homepage>https://github.com/Onto-Med/COP</foaf:homepage>
     </owl:Ontology>
     
@@ -78,6 +81,13 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/title -->
 
 
@@ -96,6 +106,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/references"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/doi -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/doi"/>
     
 
 

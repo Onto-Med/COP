@@ -654,6 +654,9 @@
   "@id" : "http://purl.org/dc/elements/1.1/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/elements/1.1/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -661,6 +664,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/references",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/doi",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
@@ -827,6 +833,10 @@
     "@language" : "en",
     "@value" : "The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software."
   } ],
+  "http://purl.org/dc/elements/1.1/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2024-06-11"
+  } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
     "@language" : "en",
     "@value" : "Core Ontology of Phenotyping (COP)"
@@ -841,6 +851,9 @@
   }, {
     "@value" : "National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT"
   } ],
+  "http://purl.org/ontology/bibo/doi" : [ {
+    "@id" : "https://zenodo.org/doi/10.5281/zenodo.5205497"
+  } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "cop"
   } ],
@@ -854,13 +867,14 @@
     "@language" : "en",
     "@value" : "Core Ontology of Phenotyping"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://zenodo.org/doi/10.5281/zenodo.5205497"
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
+    "@id" : "https://w3id.org/cop/release/v0.2.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://w3id.org/cop/release/2024-06-11"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
     "@value" : "2024-06-11"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
