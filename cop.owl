@@ -15,10 +15,10 @@
      xmlns:bibo="http://purl.org/ontology/bibo/">
 
     <owl:Ontology rdf:about="https://w3id.org/cop">
-        <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-06-11"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</owl:versionInfo>
-        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</dc:modified>
-        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/v0.2.1"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-07-08"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-08</owl:versionInfo>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-08</dc:modified>
+        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/2026-06-11"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-20</dc:created>
         <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <vann:preferredNamespacePrefix>cop</vann:preferredNamespacePrefix>
@@ -32,9 +32,9 @@
         <dc:creator>Konrad Höffner</dc:creator>
         <dc:creator>Ralph Schäfermeier</dc:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <terms:references>GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; https://bioportal.bioontology.org/ontologies/GFO-BIO</terms:references>
-        <terms:references>General Formal Ontology (GFO): https://onto-med.github.io/GFO; https://www.onto-med.de/ontologies/gfo</terms:references>
-        <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT</terms:references>
+        <terms:references>GFO-Bio: https://www.onto-med.de/ontologies/gfo-bio; http://onto.eva.mpg.de/ontologies/gfo-bio.owl</terms:references>
+        <terms:references>General Formal Ontology (GFO) (light version): https://onto-med.github.io/GFO; http://purl.org/ontology/gfo-light</terms:references>
+        <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl</terms:references>
         <foaf:homepage>https://github.com/Onto-Med/COP</foaf:homepage>
         <doap:repository rdf:resource="https://github.com/Onto-Med/COP"/>
         <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
@@ -160,7 +160,7 @@
     <!-- https://w3id.org/cop/hasPhenotype -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasPhenotype">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo/hasAttributive"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo-light/hasAttributive"/>
         <owl:inverseOf rdf:resource="https://w3id.org/cop/phenotypeOf"/>
         <rdfs:domain rdf:resource="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"/>
         <rdfs:range rdf:resource="https://w3id.org/cop/Phenotype"/>
@@ -192,7 +192,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cop/hasRepresentationAttribute">
         <owl:inverseOf rdf:resource="https://w3id.org/cop/representationAttributeOf"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
         <rdfs:range rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
     </owl:ObjectProperty>
     
@@ -220,7 +220,7 @@
     <!-- https://w3id.org/cop/phenotypeOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cop/phenotypeOf">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo/attributiveOf"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/ontology/gfo-light/attributiveOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cop/Phenotype"/>
         <rdfs:range rdf:resource="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism"/>
     </owl:ObjectProperty>
@@ -231,7 +231,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cop/realises">
         <rdfs:domain rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Process"/>
+        <rdfs:range rdf:resource="https://purl.org/ontology/gfo-light/Process"/>
     </owl:ObjectProperty>
     
 
@@ -240,7 +240,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cop/representationAttributeOf">
         <rdfs:domain rdf:resource="https://w3id.org/cop/RepresentationEntity"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+        <rdfs:range rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
     </owl:ObjectProperty>
     
 
@@ -263,38 +263,38 @@
     
 
 
-    <!-- https://purl.org/ontology/gfo/attributiveOf -->
+    <!-- https://purl.org/ontology/gfo-light/attributiveOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo/attributiveOf">
-        <owl:inverseOf rdf:resource="https://purl.org/ontology/gfo/hasAttributive"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo/Attributive"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo-light/attributiveOf">
+        <owl:inverseOf rdf:resource="https://purl.org/ontology/gfo-light/hasAttributive"/>
+        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo-light/Attributive"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/gfo/hasAttributive -->
+    <!-- https://purl.org/ontology/gfo-light/hasAttributive -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo/hasAttributive">
-        <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Attributive"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo-light/hasAttributive">
+        <rdfs:range rdf:resource="https://purl.org/ontology/gfo-light/Attributive"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/gfo/instanceOf -->
+    <!-- https://purl.org/ontology/gfo-light/instanceOf -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo/instanceOf">
-        <owl:inverseOf rdf:resource="https://purl.org/ontology/gfo/instantiatedBy"/>
-        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo/Entity"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Category"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo-light/instanceOf">
+        <owl:inverseOf rdf:resource="https://purl.org/ontology/gfo-light/instantiatedBy"/>
+        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
+        <rdfs:range rdf:resource="https://purl.org/ontology/gfo-light/Category"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/ontology/gfo/instantiatedBy -->
+    <!-- https://purl.org/ontology/gfo-light/instantiatedBy -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo/instantiatedBy">
-        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo/Category"/>
-        <rdfs:range rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/ontology/gfo-light/instantiatedBy">
+        <rdfs:domain rdf:resource="https://purl.org/ontology/gfo-light/Category"/>
+        <rdfs:range rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
     </owl:ObjectProperty>
     
 
@@ -349,7 +349,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/cop/realises"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo/Process"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo-light/Process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A set of coded instructions, which a computer follows in processing data, performing an operation, or solving a logical problem, upon execution of the program.</rdfs:comment>
@@ -529,7 +529,7 @@
     <!-- http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism -->
 
     <owl:Class rdf:about="http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Individual"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Individual"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/cop/hasPhenotype"/>
@@ -644,10 +644,10 @@
     <!-- https://w3id.org/cop/Phenotype -->
 
     <owl:Class rdf:about="https://w3id.org/cop/Phenotype">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Attributive"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Attributive"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instanceOf"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/instanceOf"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/cop/PhenotypeClass"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -700,7 +700,7 @@
     <!-- https://w3id.org/cop/PhenotypeClass -->
 
     <owl:Class rdf:about="https://w3id.org/cop/PhenotypeClass">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Property"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/cop/hasRepresentationAttribute"/>
@@ -709,7 +709,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instantiatedBy"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/instantiatedBy"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/cop/Phenotype"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -798,7 +798,7 @@
     <!-- https://w3id.org/cop/Phenotyping -->
 
     <owl:Class rdf:about="https://w3id.org/cop/Phenotyping">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Process"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Process"/>
         <rdfs:comment xml:lang="en">Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes.</rdfs:comment>
         <rdfs:comment xml:lang="de">Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen.</rdfs:comment>
         <rdfs:label xml:lang="en">Phenotyping</rdfs:label>
@@ -873,21 +873,21 @@
     
 
 
-    <!-- https://purl.org/ontology/gfo/Attributive -->
+    <!-- https://purl.org/ontology/gfo-light/Attributive -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Attributive">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Individual"/>
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Attributive">
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Individual"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instanceOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo/Property"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/instanceOf"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo-light/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/attributiveOf"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/attributiveOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+                <owl:onClass rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Individuals that are related to other individuals by some kind of dependency relation are called attributives.</rdfs:comment>
@@ -896,33 +896,33 @@
     
 
 
-    <!-- https://purl.org/ontology/gfo/Category -->
+    <!-- https://purl.org/ontology/gfo-light/Category -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Category">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Category">
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
         <rdfs:comment xml:lang="en">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</rdfs:comment>
         <rdfs:label xml:lang="en">Category</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/ontology/gfo/Entity -->
+    <!-- https://purl.org/ontology/gfo-light/Entity -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Entity">
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Entity">
         <rdfs:comment xml:lang="en">Everything which exists is called an entity.</rdfs:comment>
         <rdfs:label xml:lang="en">Entity</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/ontology/gfo/Individual -->
+    <!-- https://purl.org/ontology/gfo-light/Individual -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Individual">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Entity"/>
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Individual">
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instanceOf"/>
-                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo/Category"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/instanceOf"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/ontology/gfo-light/Category"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Individuals are entities which cannot be further instantiated.</rdfs:comment>
@@ -931,24 +931,24 @@
     
 
 
-    <!-- https://purl.org/ontology/gfo/Process -->
+    <!-- https://purl.org/ontology/gfo-light/Process -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Process">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Individual"/>
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Process">
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Individual"/>
         <rdfs:comment xml:lang="en">Processes are concrete individuals that have a temporal extension. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries.</rdfs:comment>
         <rdfs:label xml:lang="en">Process</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/ontology/gfo/Property -->
+    <!-- https://purl.org/ontology/gfo-light/Property -->
 
-    <owl:Class rdf:about="https://purl.org/ontology/gfo/Property">
-        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo/Category"/>
+    <owl:Class rdf:about="https://purl.org/ontology/gfo-light/Property">
+        <rdfs:subClassOf rdf:resource="https://purl.org/ontology/gfo-light/Category"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo/instantiatedBy"/>
-                <owl:allValuesFrom rdf:resource="https://purl.org/ontology/gfo/Attributive"/>
+                <owl:onProperty rdf:resource="https://purl.org/ontology/gfo-light/instantiatedBy"/>
+                <owl:allValuesFrom rdf:resource="https://purl.org/ontology/gfo-light/Attributive"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Properties are categories that are instantiated by attributives.</rdfs:comment>
