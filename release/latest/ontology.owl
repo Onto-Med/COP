@@ -34,7 +34,7 @@
         <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <doap:repository rdf:resource="https://github.com/Onto-Med/COP"/>
         <rdfs:label xml:lang="en">Core Ontology of Phenotyping</rdfs:label>
-        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/2026-06-11"/>
+        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/2024-06-11"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-08</owl:versionInfo>
         <foaf:homepage>https://github.com/Onto-Med/COP</foaf:homepage>
     </owl:Ontology>
