@@ -1,0 +1,205 @@
+@prefix : <https://www.smith.care/cop#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://www.smith.care/cop#> .
+
+<https://www.smith.care/cop> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://www.smith.care/cop#alias
+:alias rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#category
+:category rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#datatype
+:datatype rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#datatype_text
+:datatype_text rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#formula
+:formula rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#generated_title
+:generated_title rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#main_title
+:main_title rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#main_unit
+:main_unit rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#phenotype
+:phenotype rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#rank
+:rank rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#resource_type
+:resource_type rdf:type owl:AnnotationProperty .
+
+
+###  https://www.smith.care/cop#variable
+:variable rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://www.smith.care/cop#has_part
+:has_part rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Composite_Phenotype ;
+          rdfs:range :Single_Phenotype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.smith.care/cop#has_value
+:has_value rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Derived_Phenotype
+                                       :Single_Phenotype
+                                     )
+                       ] ;
+           rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://www.smith.care/cop#Code_System
+:Code_System rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             :main_title "Code_System" .
+
+
+###  https://www.smith.care/cop#Combined_Phenotype
+:Combined_Phenotype rdf:type owl:Class ;
+                    rdfs:subClassOf :Composite_Phenotype ;
+                    rdfs:comment "A combined phenotype is a combination of corresponding single phenotypes (e.g., a combination of height and weight)." ;
+                    :main_title "Combined_Phenotype" .
+
+
+###  https://www.smith.care/cop#Composite_Phenotype
+:Composite_Phenotype rdf:type owl:Class ;
+                     rdfs:subClassOf :Phenotype ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :has_part ;
+                                       owl:someValuesFrom :Single_Phenotype
+                                     ] ;
+                     rdfs:comment "We define composite phenotypes as composite properties (e.g., combination of height and weight, BMI, SOFA score) of an organism or of one of its subsystems. A composite property is defined as a property that has single properties as parts." ;
+                     :main_title "Composite_Phenotype" .
+
+
+###  https://www.smith.care/cop#Derived_Phenotype
+:Derived_Phenotype rdf:type owl:Class ;
+                   rdfs:subClassOf :Composite_Phenotype ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :has_value ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:comment "A derived phenotype is an additional property (e.g., BMI) derived from the corresponding phenotypes (e.g., height and weight)." ;
+                   :main_title "Derived_Phenotype" .
+
+
+###  https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class
+:Non_restricted_Combined_Phenotype_Class rdf:type owl:Class ;
+                                         rdfs:subClassOf :Non_restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class
+:Non_restricted_Derived_Phenotype_Class rdf:type owl:Class ;
+                                        rdfs:subClassOf :Non_restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Non_restricted_Phenotype_Class
+:Non_restricted_Phenotype_Class rdf:type owl:Class ;
+                                rdfs:subClassOf :Phenotype_Class ;
+                                rdfs:comment "The extension (set of instances) of a non-restricted phenotype class is not restricted to a certain range of individual phenotypes, all instances are allowed. For example, the phenotype class ‘age’ instantiated by the ages of all living beings is non-restricted." .
+
+
+###  https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class
+:Non_restricted_Single_Phenotype_Class rdf:type owl:Class ;
+                                       rdfs:subClassOf :Non_restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Phenotype
+:Phenotype rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:comment "We consider a phenotype as a dependent individual (in sense of General Formal Ontology, GFO), for example, the weight of a specific person. Hereinafter, abstract instantiable entities that are instantiated by phenotypes are called phenotype classes. For instance, the abstract property ‘weight’ possesses individual weights as instances." ;
+           :main_title "Phenotype" .
+
+
+###  https://www.smith.care/cop#Phenotype_Category
+:Phenotype_Category rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing ;
+                    :main_title "Phenotype_Category" .
+
+
+###  https://www.smith.care/cop#Phenotype_Class
+:Phenotype_Class rdf:type owl:Class ;
+                 rdfs:comment "Abstract instantiable entities that are instantiated by phenotypes are called phenotype classes." .
+
+
+###  https://www.smith.care/cop#Restricted_Combined_Phenotype_Class
+:Restricted_Combined_Phenotype_Class rdf:type owl:Class ;
+                                     rdfs:subClassOf :Restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Restricted_Derived_Phenotype_Class
+:Restricted_Derived_Phenotype_Class rdf:type owl:Class ;
+                                    rdfs:subClassOf :Restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Restricted_Phenotype_Class
+:Restricted_Phenotype_Class rdf:type owl:Class ;
+                            rdfs:subClassOf :Phenotype_Class ;
+                            rdfs:comment "The extension (set of instances) of a restricted phenotype class is restricted to a certain range of individual phenotypes by defined conditions. For example, the phenotype class ‘young age’ instantiated by the ages of the young living beings (e.g., if the age is below 30 years) is restricted. A restricted phenotype class is a subclass of a non-restricted phenotype class (e.g., ‘young age’ is subclass of 'age')." .
+
+
+###  https://www.smith.care/cop#Restricted_Single_Phenotype_Class
+:Restricted_Single_Phenotype_Class rdf:type owl:Class ;
+                                   rdfs:subClassOf :Restricted_Phenotype_Class .
+
+
+###  https://www.smith.care/cop#Single_Phenotype
+:Single_Phenotype rdf:type owl:Class ;
+                  rdfs:subClassOf :Phenotype ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :has_value ;
+                                    owl:someValuesFrom rdfs:Literal
+                                  ] ;
+                  rdfs:comment "We define single phenotypes as single properties (e.g., age, weight, height) of an organism or of one of its subsystems." ;
+                  :main_title "Single_Phenotype" .
+
+
+###  https://www.smith.care/cop#Single_Phenotype_Group
+:Single_Phenotype_Group rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing ;
+                        :main_title "Single_Phenotype_Group" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

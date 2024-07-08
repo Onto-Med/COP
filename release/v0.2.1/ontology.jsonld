@@ -1,0 +1,255 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://www.smith.care/cop#Derived_Phenotype"
+    }, {
+      "@id" : "https://www.smith.care/cop#Single_Phenotype"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://www.smith.care/cop#has_part"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://www.smith.care/cop#Single_Phenotype"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://www.smith.care/cop#has_value"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://www.smith.care/cop#has_value"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://www.smith.care/cop#Code_System",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Code_System"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Combined_Phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A combined phenotype is a combination of corresponding single phenotypes (e.g., a combination of height and weight)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Composite_Phenotype"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Combined_Phenotype"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Composite_Phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "We define composite phenotypes as composite properties (e.g., combination of height and weight, BMI, SOFA score) of an organism or of one of its subsystems. A composite property is defined as a property that has single properties as parts."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Phenotype"
+  }, {
+    "@id" : "_:genid4"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Composite_Phenotype"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Derived_Phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A derived phenotype is an additional property (e.g., BMI) derived from the corresponding phenotypes (e.g., height and weight)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Composite_Phenotype"
+  }, {
+    "@id" : "_:genid5"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Derived_Phenotype"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Non_restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Non_restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Non_restricted_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The extension (set of instances) of a non-restricted phenotype class is not restricted to a certain range of individual phenotypes, all instances are allowed. For example, the phenotype class ‘age’ instantiated by the ages of all living beings is non-restricted."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Non_restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "We consider a phenotype as a dependent individual (in sense of General Formal Ontology, GFO), for example, the weight of a specific person. Hereinafter, abstract instantiable entities that are instantiated by phenotypes are called phenotype classes. For instance, the abstract property ‘weight’ possesses individual weights as instances."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Phenotype"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Phenotype_Category",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Phenotype_Category"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Abstract instantiable entities that are instantiated by phenotypes are called phenotype classes."
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Restricted_Combined_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Restricted_Derived_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Restricted_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The extension (set of instances) of a restricted phenotype class is restricted to a certain range of individual phenotypes by defined conditions. For example, the phenotype class ‘young age’ instantiated by the ages of the young living beings (e.g., if the age is below 30 years) is restricted. A restricted phenotype class is a subclass of a non-restricted phenotype class (e.g., ‘young age’ is subclass of 'age')."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Restricted_Single_Phenotype_Class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Restricted_Phenotype_Class"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Single_Phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "We define single phenotypes as single properties (e.g., age, weight, height) of an organism or of one of its subsystems."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.smith.care/cop#Phenotype"
+  }, {
+    "@id" : "_:genid6"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Single_Phenotype"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#Single_Phenotype_Group",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "https://www.smith.care/cop#main_title" : [ {
+    "@value" : "Single_Phenotype_Group"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#alias",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#category",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#datatype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#datatype_text",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#formula",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#generated_title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#has_part",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://www.smith.care/cop#Composite_Phenotype"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://www.smith.care/cop#Single_Phenotype"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#has_value",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://www.smith.care/cop#main_title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#main_unit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#phenotype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#rank",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#resource_type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.smith.care/cop#variable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

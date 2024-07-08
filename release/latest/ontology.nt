@@ -1,0 +1,189 @@
+<https://www.smith.care/cop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# https://www.smith.care/cop#alias
+<https://www.smith.care/cop#alias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#category
+<https://www.smith.care/cop#category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#datatype
+<https://www.smith.care/cop#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#datatype_text
+<https://www.smith.care/cop#datatype_text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#formula
+<https://www.smith.care/cop#formula> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#generated_title
+<https://www.smith.care/cop#generated_title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#main_title
+<https://www.smith.care/cop#main_title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#main_unit
+<https://www.smith.care/cop#main_unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#phenotype
+<https://www.smith.care/cop#phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#rank
+<https://www.smith.care/cop#rank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#resource_type
+<https://www.smith.care/cop#resource_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://www.smith.care/cop#variable
+<https://www.smith.care/cop#variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://www.smith.care/cop#has_part
+<https://www.smith.care/cop#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://www.smith.care/cop#has_part> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://www.smith.care/cop#has_part> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.smith.care/cop#Composite_Phenotype> .
+<https://www.smith.care/cop#has_part> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.smith.care/cop#Single_Phenotype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://www.smith.care/cop#has_value
+<https://www.smith.care/cop#has_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://www.smith.care/cop#has_value> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://www.smith.care/cop#has_value> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.smith.care/cop#Single_Phenotype> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.smith.care/cop#Derived_Phenotype> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#has_value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://www.smith.care/cop#Code_System
+<https://www.smith.care/cop#Code_System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Code_System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://www.smith.care/cop#Code_System> <https://www.smith.care/cop#main_title> "Code_System" .
+# 
+# https://www.smith.care/cop#Combined_Phenotype
+<https://www.smith.care/cop#Combined_Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Combined_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Composite_Phenotype> .
+<https://www.smith.care/cop#Combined_Phenotype> <http://www.w3.org/2000/01/rdf-schema#comment> "A combined phenotype is a combination of corresponding single phenotypes (e.g., a combination of height and weight)." .
+<https://www.smith.care/cop#Combined_Phenotype> <https://www.smith.care/cop#main_title> "Combined_Phenotype" .
+# 
+# https://www.smith.care/cop#Composite_Phenotype
+<https://www.smith.care/cop#Composite_Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Composite_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Phenotype> .
+<https://www.smith.care/cop#Composite_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://www.smith.care/cop#Single_Phenotype> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://www.smith.care/cop#has_part> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://www.smith.care/cop#Composite_Phenotype> <http://www.w3.org/2000/01/rdf-schema#comment> "We define composite phenotypes as composite properties (e.g., combination of height and weight, BMI, SOFA score) of an organism or of one of its subsystems. A composite property is defined as a property that has single properties as parts." .
+<https://www.smith.care/cop#Composite_Phenotype> <https://www.smith.care/cop#main_title> "Composite_Phenotype" .
+# 
+# https://www.smith.care/cop#Derived_Phenotype
+<https://www.smith.care/cop#Derived_Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Derived_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Composite_Phenotype> .
+<https://www.smith.care/cop#Derived_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://www.smith.care/cop#has_value> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://www.smith.care/cop#Derived_Phenotype> <http://www.w3.org/2000/01/rdf-schema#comment> "A derived phenotype is an additional property (e.g., BMI) derived from the corresponding phenotypes (e.g., height and weight)." .
+<https://www.smith.care/cop#Derived_Phenotype> <https://www.smith.care/cop#main_title> "Derived_Phenotype" .
+# 
+# https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class
+<https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Non_restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class
+<https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Non_restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Non_restricted_Phenotype_Class
+<https://www.smith.care/cop#Non_restricted_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Non_restricted_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Phenotype_Class> .
+<https://www.smith.care/cop#Non_restricted_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "The extension (set of instances) of a non-restricted phenotype class is not restricted to a certain range of individual phenotypes, all instances are allowed. For example, the phenotype class ‘age’ instantiated by the ages of all living beings is non-restricted." .
+# 
+# https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class
+<https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Non_restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Phenotype
+<https://www.smith.care/cop#Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://www.smith.care/cop#Phenotype> <http://www.w3.org/2000/01/rdf-schema#comment> "We consider a phenotype as a dependent individual (in sense of General Formal Ontology, GFO), for example, the weight of a specific person. Hereinafter, abstract instantiable entities that are instantiated by phenotypes are called phenotype classes. For instance, the abstract property ‘weight’ possesses individual weights as instances." .
+<https://www.smith.care/cop#Phenotype> <https://www.smith.care/cop#main_title> "Phenotype" .
+# 
+# https://www.smith.care/cop#Phenotype_Category
+<https://www.smith.care/cop#Phenotype_Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Phenotype_Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://www.smith.care/cop#Phenotype_Category> <https://www.smith.care/cop#main_title> "Phenotype_Category" .
+# 
+# https://www.smith.care/cop#Phenotype_Class
+<https://www.smith.care/cop#Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract instantiable entities that are instantiated by phenotypes are called phenotype classes." .
+# 
+# https://www.smith.care/cop#Restricted_Combined_Phenotype_Class
+<https://www.smith.care/cop#Restricted_Combined_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Restricted_Combined_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Restricted_Derived_Phenotype_Class
+<https://www.smith.care/cop#Restricted_Derived_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Restricted_Derived_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Restricted_Phenotype_Class
+<https://www.smith.care/cop#Restricted_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Restricted_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Phenotype_Class> .
+<https://www.smith.care/cop#Restricted_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#comment> "The extension (set of instances) of a restricted phenotype class is restricted to a certain range of individual phenotypes by defined conditions. For example, the phenotype class ‘young age’ instantiated by the ages of the young living beings (e.g., if the age is below 30 years) is restricted. A restricted phenotype class is a subclass of a non-restricted phenotype class (e.g., ‘young age’ is subclass of 'age')." .
+# 
+# https://www.smith.care/cop#Restricted_Single_Phenotype_Class
+<https://www.smith.care/cop#Restricted_Single_Phenotype_Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Restricted_Single_Phenotype_Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Restricted_Phenotype_Class> .
+# 
+# https://www.smith.care/cop#Single_Phenotype
+<https://www.smith.care/cop#Single_Phenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Single_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.smith.care/cop#Phenotype> .
+<https://www.smith.care/cop#Single_Phenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://www.smith.care/cop#has_value> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://www.smith.care/cop#Single_Phenotype> <http://www.w3.org/2000/01/rdf-schema#comment> "We define single phenotypes as single properties (e.g., age, weight, height) of an organism or of one of its subsystems." .
+<https://www.smith.care/cop#Single_Phenotype> <https://www.smith.care/cop#main_title> "Single_Phenotype" .
+# 
+# https://www.smith.care/cop#Single_Phenotype_Group
+<https://www.smith.care/cop#Single_Phenotype_Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.smith.care/cop#Single_Phenotype_Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://www.smith.care/cop#Single_Phenotype_Group> <https://www.smith.care/cop#main_title> "Single_Phenotype_Group" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

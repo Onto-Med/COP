@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.smith.care/cop#"
+     xml:base="https://www.smith.care/cop"
+     xmlns:cop="https://www.smith.care/cop#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://www.smith.care/cop"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.smith.care/cop#alias -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#alias"/>
+    
+
+
+    <!-- https://www.smith.care/cop#category -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#category"/>
+    
+
+
+    <!-- https://www.smith.care/cop#datatype -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#datatype"/>
+    
+
+
+    <!-- https://www.smith.care/cop#datatype_text -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#datatype_text"/>
+    
+
+
+    <!-- https://www.smith.care/cop#formula -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#formula"/>
+    
+
+
+    <!-- https://www.smith.care/cop#generated_title -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#generated_title"/>
+    
+
+
+    <!-- https://www.smith.care/cop#main_title -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#main_title"/>
+    
+
+
+    <!-- https://www.smith.care/cop#main_unit -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#main_unit"/>
+    
+
+
+    <!-- https://www.smith.care/cop#phenotype -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#phenotype"/>
+    
+
+
+    <!-- https://www.smith.care/cop#rank -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#rank"/>
+    
+
+
+    <!-- https://www.smith.care/cop#resource_type -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#resource_type"/>
+    
+
+
+    <!-- https://www.smith.care/cop#variable -->
+
+
+    <owl:AnnotationProperty rdf:about="https://www.smith.care/cop#variable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.smith.care/cop#has_part -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.smith.care/cop#has_part">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://www.smith.care/cop#Composite_Phenotype"/>
+        <rdfs:range rdf:resource="https://www.smith.care/cop#Single_Phenotype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.smith.care/cop#has_value -->
+
+
+    <owl:DatatypeProperty rdf:about="https://www.smith.care/cop#has_value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.smith.care/cop#Derived_Phenotype"/>
+                    <rdf:Description rdf:about="https://www.smith.care/cop#Single_Phenotype"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.smith.care/cop#Code_System -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Code_System">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <main_title>Code_System</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Combined_Phenotype -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Combined_Phenotype">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Composite_Phenotype"/>
+        <rdfs:comment>A combined phenotype is a combination of corresponding single phenotypes (e.g., a combination of height and weight).</rdfs:comment>
+        <main_title>Combined_Phenotype</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Composite_Phenotype -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Composite_Phenotype">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.smith.care/cop#has_part"/>
+                <owl:someValuesFrom rdf:resource="https://www.smith.care/cop#Single_Phenotype"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>We define composite phenotypes as composite properties (e.g., combination of height and weight, BMI, SOFA score) of an organism or of one of its subsystems. A composite property is defined as a property that has single properties as parts.</rdfs:comment>
+        <main_title>Composite_Phenotype</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Derived_Phenotype -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Derived_Phenotype">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Composite_Phenotype"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.smith.care/cop#has_value"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A derived phenotype is an additional property (e.g., BMI) derived from the corresponding phenotypes (e.g., height and weight).</rdfs:comment>
+        <main_title>Derived_Phenotype</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Combined_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Derived_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype_Class"/>
+        <rdfs:comment>The extension (set of instances) of a non-restricted phenotype class is not restricted to a certain range of individual phenotypes, all instances are allowed. For example, the phenotype class ‘age’ instantiated by the ages of all living beings is non-restricted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Non_restricted_Single_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Non_restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Phenotype -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Phenotype">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>We consider a phenotype as a dependent individual (in sense of General Formal Ontology, GFO), for example, the weight of a specific person. Hereinafter, abstract instantiable entities that are instantiated by phenotypes are called phenotype classes. For instance, the abstract property ‘weight’ possesses individual weights as instances.</rdfs:comment>
+        <main_title>Phenotype</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Phenotype_Category -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Phenotype_Category">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <main_title>Phenotype_Category</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Phenotype_Class">
+        <rdfs:comment>Abstract instantiable entities that are instantiated by phenotypes are called phenotype classes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Combined_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Combined_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Derived_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Derived_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype_Class"/>
+        <rdfs:comment>The extension (set of instances) of a restricted phenotype class is restricted to a certain range of individual phenotypes by defined conditions. For example, the phenotype class ‘young age’ instantiated by the ages of the young living beings (e.g., if the age is below 30 years) is restricted. A restricted phenotype class is a subclass of a non-restricted phenotype class (e.g., ‘young age’ is subclass of &apos;age&apos;).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Restricted_Single_Phenotype_Class -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Restricted_Single_Phenotype_Class">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Restricted_Phenotype_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Single_Phenotype -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Single_Phenotype">
+        <rdfs:subClassOf rdf:resource="https://www.smith.care/cop#Phenotype"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.smith.care/cop#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>We define single phenotypes as single properties (e.g., age, weight, height) of an organism or of one of its subsystems.</rdfs:comment>
+        <main_title>Single_Phenotype</main_title>
+    </owl:Class>
+    
+
+
+    <!-- https://www.smith.care/cop#Single_Phenotype_Group -->
+
+
+    <owl:Class rdf:about="https://www.smith.care/cop#Single_Phenotype_Group">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <main_title>Single_Phenotype_Group</main_title>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
