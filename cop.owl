@@ -11,11 +11,14 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:doap="http://usefulinc.com/ns/doap#">
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:bibo="http://purl.org/ontology/bibo/">
 
     <owl:Ontology rdf:about="https://w3id.org/cop">
         <owl:versionIRI rdf:resource="https://w3id.org/cop/release/2024-06-11"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2024-06-11</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</owl:versionInfo>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-11</dc:modified>
+        <owl:priorVersion rdf:resource="https://w3id.org/cop/release/v0.2.1"/>
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-20</dc:created>
         <vann:preferredNamespaceURI>https://w3id.org/cop/</vann:preferredNamespaceURI>
         <vann:preferredNamespacePrefix>cop</vann:preferredNamespacePrefix>
@@ -34,7 +37,7 @@
         <terms:references>National Cancer Institute NCI Thesaurus: https://ncit.nci.nih.gov; https://bioportal.bioontology.org/ontologies/NCIT</terms:references>
         <foaf:homepage>https://github.com/Onto-Med/COP</foaf:homepage>
         <doap:repository rdf:resource="https://github.com/Onto-Med/COP"/>
-        <rdfs:seeAlso rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
+        <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205497"/>
     </owl:Ontology>
 
 
