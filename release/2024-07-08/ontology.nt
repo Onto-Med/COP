@@ -19,7 +19,7 @@
 <https://w3id.org/cop> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/cop/" .
 <https://w3id.org/cop> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/COP> .
 <https://w3id.org/cop> <http://www.w3.org/2000/01/rdf-schema#label> "Core Ontology of Phenotyping"@en .
-<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/cop/release/2026-06-11> .
+<https://w3id.org/cop> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/cop/release/2024-06-11> .
 <https://w3id.org/cop> <http://www.w3.org/2002/07/owl#versionInfo> "2024-07-08"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/cop> <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/COP" .
 # 

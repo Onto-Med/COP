@@ -868,7 +868,7 @@
     "@value" : "Core Ontology of Phenotyping"
   } ],
   "http://www.w3.org/2002/07/owl#priorVersion" : [ {
-    "@id" : "https://w3id.org/cop/release/2026-06-11"
+    "@id" : "https://w3id.org/cop/release/2024-06-11"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://w3id.org/cop/release/2024-07-08"

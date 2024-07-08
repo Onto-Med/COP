@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cop","name":"Core Ontology of Phenotyping (COP)", "headline":"Document describing the ontology https://w3id.org/cop", "dateReleased":"Mon Jul 08 10:46:58 UTC 2024", "version":"2024-07-08", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/COP", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/cop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/cop","name":"Core Ontology of Phenotyping (COP)", "headline":"Document describing the ontology https://w3id.org/cop", "dateReleased":"Mon Jul 08 10:54:47 UTC 2024", "version":"2024-07-08", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/COP", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -72,7 +72,7 @@ $(function(){
 <dt>This version:</dt>
 <dd><a href="https://w3id.org/cop/release/2024-07-08">https://w3id.org/cop/release/2024-07-08</a></dd>
 <dt>Previous version:</dt>
-<dd><a href="https://w3id.org/cop/release/2026-06-11">https://w3id.org/cop/release/2026-06-11</a></dd>
+<dd><a href="https://w3id.org/cop/release/2024-06-11">https://w3id.org/cop/release/2024-06-11</a></dd>
 <dt>Revision:</dt>
 <dd>2024-07-08</dd>
 <dt>Authors:</dt>
@@ -1942,7 +1942,170 @@ This section provides details for each class and property defined by Core Ontolo
    
 
 <!--CHANGELOG SECTION-->
-   <div id="changelog">null</div>
+   <div id="changelog"><div id="changelog">
+<h2 id="changes" class="list">Changes from last version</h2>
+<h3 id="changeClass" class="list">Classes</h3>
+<details><summary><u>Modified classes</u></summary>
+<ul><li><a href="#http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146">http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146</a>
+<ul>
+<li></ul>
+<ul>
+<li></ul>
+</li>
+<li><a href="#http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism">http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Organism</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Individual</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://purl.org/ontology/gfo/Individual</li>
+</ul>
+</li>
+<li><a href="#/Phenotype">https://w3id.org/cop/Phenotype</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo-light/Attributive</li>
+</ul>
+<ul>
+<li><li>Deleted: SubClass of https://purl.org/ontology/gfo/Attributive</li>
+</ul>
+</li>
+<li><a href="#/PhenotypeClass">https://w3id.org/cop/PhenotypeClass</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Property</li>
+<li></ul>
+<ul>
+<li><li>Deleted: SubClass of https://purl.org/ontology/gfo/Property</li>
+</ul>
+</li>
+<li><a href="#/Phenotyping">https://w3id.org/cop/Phenotyping</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Process</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://purl.org/ontology/gfo/Process</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added classes</u></summary>
+<ul><li><a href="#https://purl.org/ontology/gfo-light/Attributive">https://purl.org/ontology/gfo-light/Attributive</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo-light/Individual</li>
+<li></ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/Category">https://purl.org/ontology/gfo-light/Category</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Entity</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/Entity">https://purl.org/ontology/gfo-light/Entity</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/Individual">https://purl.org/ontology/gfo-light/Individual</a>
+<ul>
+<li><li>Added: SubClass of https://purl.org/ontology/gfo-light/Entity</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/Process">https://purl.org/ontology/gfo-light/Process</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Individual</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/Property">https://purl.org/ontology/gfo-light/Property</a>
+<ul>
+<li>Added: SubClass of https://purl.org/ontology/gfo-light/Category</li>
+<li></ul>
+</li>
+</ul></details><details><summary><u>Deleted classes</u></summary>
+<ul><li><a href="#https://purl.org/ontology/gfo/Attributive">https://purl.org/ontology/gfo/Attributive</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Category">https://purl.org/ontology/gfo/Category</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Entity">https://purl.org/ontology/gfo/Entity</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Individual">https://purl.org/ontology/gfo/Individual</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Process">https://purl.org/ontology/gfo/Process</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/Property">https://purl.org/ontology/gfo/Property</a>
+</li>
+</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
+<details><summary><u>Modified object properties</u></summary>
+<ul><li><a href="#/hasPhenotype">https://w3id.org/cop/hasPhenotype</a>
+<ul>
+<li>Added: SubProperty of https://purl.org/ontology/gfo-light/hasAttributive</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of https://purl.org/ontology/gfo/hasAttributive</li>
+</ul>
+</li>
+<li><a href="#/hasRepresentationAttribute">https://w3id.org/cop/hasRepresentationAttribute</a>
+<ul>
+<li>Added: domain https://purl.org/ontology/gfo-light/Entity</li>
+</ul>
+<ul>
+<li>Deleted: domain https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+<li><a href="#/phenotypeOf">https://w3id.org/cop/phenotypeOf</a>
+<ul>
+<li>Added: SubProperty of https://purl.org/ontology/gfo-light/attributiveOf</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of https://purl.org/ontology/gfo/attributiveOf</li>
+</ul>
+</li>
+<li><a href="#/realises">https://w3id.org/cop/realises</a>
+<ul>
+<li>Added: Range https://purl.org/ontology/gfo-light/Process</li>
+</ul>
+<ul>
+<li>Deleted: Range https://purl.org/ontology/gfo/Process</li>
+</ul>
+</li>
+<li><a href="#/representationAttributeOf">https://w3id.org/cop/representationAttributeOf</a>
+<ul>
+<li>Added: Range https://purl.org/ontology/gfo-light/Entity</li>
+</ul>
+<ul>
+<li>Deleted: Range https://purl.org/ontology/gfo/Entity</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added object properties</u></summary>
+<ul><li><a href="#https://purl.org/ontology/gfo-light/attributiveOf">https://purl.org/ontology/gfo-light/attributiveOf</a>
+<ul>
+<li>Added: domain https://purl.org/ontology/gfo-light/Attributive</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo-light/attributiveOf&gt; &lt;https://purl.org/ontology/gfo-light/hasAttributive&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/hasAttributive">https://purl.org/ontology/gfo-light/hasAttributive</a>
+<ul>
+<li>Added: Range https://purl.org/ontology/gfo-light/Attributive</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo-light/attributiveOf&gt; &lt;https://purl.org/ontology/gfo-light/hasAttributive&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/instanceOf">https://purl.org/ontology/gfo-light/instanceOf</a>
+<ul>
+<li>Added: Range https://purl.org/ontology/gfo-light/Category</li>
+<li>Added: domain https://purl.org/ontology/gfo-light/Entity</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo-light/instanceOf&gt; &lt;https://purl.org/ontology/gfo-light/instantiatedBy&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://purl.org/ontology/gfo-light/instantiatedBy">https://purl.org/ontology/gfo-light/instantiatedBy</a>
+<ul>
+<li>Added: domain https://purl.org/ontology/gfo-light/Category</li>
+<li>Added: Range https://purl.org/ontology/gfo-light/Entity</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://purl.org/ontology/gfo-light/instanceOf&gt; &lt;https://purl.org/ontology/gfo-light/instantiatedBy&gt;)</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted object properties</u></summary>
+<ul><li><a href="#https://purl.org/ontology/gfo/attributiveOf">https://purl.org/ontology/gfo/attributiveOf</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/hasAttributive">https://purl.org/ontology/gfo/hasAttributive</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/instanceOf">https://purl.org/ontology/gfo/instanceOf</a>
+</li>
+<li><a href="#https://purl.org/ontology/gfo/instantiatedBy">https://purl.org/ontology/gfo/instantiatedBy</a>
+</li>
+</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
+</div>
+</div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>
