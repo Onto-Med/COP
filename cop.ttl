@@ -1,0 +1,731 @@
+@prefix : <https://w3id.org/cop/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cop: <https://w3id.org/cop/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix gfo-light: <https://w3id.org/gfo-light/> .
+@base <https://w3id.org/cop/> .
+
+<https://w3id.org/cop> rdf:type owl:Ontology ;
+                        owl:versionIRI <https://w3id.org/cop/release/2025-02-27> ;
+                        owl:priorVersion <https://w3id.org/cop/release/2024-07-08> ;
+                        dc:created "2020-01-20"^^xsd:date ;
+                        dc:creator "Alexandr Uciteli" ,
+                                   "Christoph Beger" ,
+                                   "Franz Matthies" ,
+                                   "Konrad Höffner" ,
+                                   "Ralph Schäfermeier" ;
+                        dc:description "Die Core Ontology of Phenotyping (COP) definiert zentrale Entitäten und ihre Beziehungen, die für die Modellierung phänotypischen Wissens und die Entwicklung von Software für die Phänotypisierung relevant sind."@de ,
+                                       "The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software."@en ;
+                        dc:modified "2025-02-27"^^xsd:date ;
+                        dc:title "Core Ontology of Phenotyping (COP)"@en ;
+                        terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                        terms:references "National Cancer Institute NCI Thesaurus (NCIt): https://ncit.nci.nih.gov; https://evsexplore.semantics.cancer.gov/evsexplore/welcome; http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl. Some NCIt classes (including the original label and definition) were integrated into the COP. The annotation properties rdfs:label and skos:definition were used for this purpose." ;
+                        bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205497> ;
+                        vann:preferredNamespacePrefix "cop" ;
+                        vann:preferredNamespaceURI "https://w3id.org/cop/" ;
+                        doap:repository <https://github.com/Onto-Med/COP> ;
+                        rdfs:label "Core Ontology of Phenotyping"@en ;
+                        owl:versionInfo "2025-02-27"^^xsd:date ;
+                        foaf:homepage "https://github.com/Onto-Med/COP" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/references
+terms:references rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/cop/ref
+cop:ref rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/cop/applicableFor
+cop:applicableFor rdf:type owl:ObjectProperty ;
+                  rdfs:domain cop:PhenotypeAlgorithm ;
+                  rdfs:range cop:PhenotypeQuery .
+
+
+###  https://w3id.org/cop/basicRestrictionOf
+cop:basicRestrictionOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cop:restrictionOf ;
+                       rdfs:domain cop:BasicPhenotypeRestriction ;
+                       rdfs:range cop:BasicPhenotypeClass .
+
+
+###  https://w3id.org/cop/derivedFrom
+cop:derivedFrom rdf:type owl:ObjectProperty ;
+                rdfs:domain cop:DerivedPhenotypeClass ;
+                rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/derivedRestrictionOf
+cop:derivedRestrictionOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf cop:restrictionOf ;
+                         rdfs:domain cop:DerivedPhenotypeRestriction ;
+                         rdfs:range cop:DerivedPhenotypeClass .
+
+
+###  https://w3id.org/cop/hasExclusion
+cop:hasExclusion rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cop:hasQueryParameter ;
+                 rdfs:domain cop:PhenotypeQuery ;
+                 rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/hasInclusion
+cop:hasInclusion rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cop:hasQueryParameter ;
+                 rdfs:domain cop:PhenotypeQuery ;
+                 rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/hasPhenotype
+cop:hasPhenotype rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf gfo-light:hasAttributive ;
+                 owl:inverseOf cop:phenotypeOf ;
+                 rdfs:domain ncit:C14250 ;
+                 rdfs:range cop:Phenotype .
+
+
+###  https://w3id.org/cop/hasProjection
+cop:hasProjection rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cop:hasQueryParameter ;
+                  rdfs:domain cop:PhenotypeQuery ;
+                  rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/hasQueryParameter
+cop:hasQueryParameter rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain cop:PhenotypeQuery ;
+                      rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/hasRepresentationAttribute
+cop:hasRepresentationAttribute rdf:type owl:ObjectProperty ;
+                               owl:inverseOf cop:representationAttributeOf ;
+                               rdfs:domain gfo-light:Entity ;
+                               rdfs:range cop:RepresentationEntity .
+
+
+###  https://w3id.org/cop/implementedBy
+cop:implementedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf cop:implements ;
+                  rdfs:domain ncit:C16275 ;
+                  rdfs:range ncit:C17146 .
+
+
+###  https://w3id.org/cop/implements
+cop:implements rdf:type owl:ObjectProperty ;
+               rdfs:domain ncit:C17146 ;
+               rdfs:range ncit:C16275 .
+
+
+###  https://w3id.org/cop/phenotypeOf
+cop:phenotypeOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf gfo-light:attributiveOf ;
+                rdfs:domain cop:Phenotype ;
+                rdfs:range ncit:C14250 .
+
+
+###  https://w3id.org/cop/realises
+cop:realises rdf:type owl:ObjectProperty ;
+             rdfs:domain ncit:C17146 ;
+             rdfs:range gfo-light:Process .
+
+
+###  https://w3id.org/cop/representationAttributeOf
+cop:representationAttributeOf rdf:type owl:ObjectProperty ;
+                              rdfs:domain cop:RepresentationEntity ;
+                              rdfs:range gfo-light:Entity .
+
+
+###  https://w3id.org/cop/represents
+cop:represents rdf:type owl:ObjectProperty ;
+               rdfs:domain cop:PhenotypeModel ;
+               rdfs:range cop:PhenotypeClass .
+
+
+###  https://w3id.org/cop/restrictionOf
+cop:restrictionOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain cop:PhenotypeRestriction ;
+                  rdfs:range cop:UnrestrictedPhenotypeClass .
+
+
+###  https://w3id.org/gfo-light/attributiveOf
+gfo-light:attributiveOf rdf:type owl:ObjectProperty ;
+                        owl:inverseOf gfo-light:hasAttributive ;
+                        rdfs:domain gfo-light:Attributive .
+
+
+###  https://w3id.org/gfo-light/hasAttributive
+gfo-light:hasAttributive rdf:type owl:ObjectProperty ;
+                         rdfs:range gfo-light:Attributive .
+
+
+###  https://w3id.org/gfo-light/instanceOf
+gfo-light:instanceOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf gfo-light:instantiatedBy ;
+                     rdfs:domain gfo-light:Entity ;
+                     rdfs:range gfo-light:Category .
+
+
+###  https://w3id.org/gfo-light/instantiatedBy
+gfo-light:instantiatedBy rdf:type owl:ObjectProperty ;
+                         rdfs:domain gfo-light:Category ;
+                         rdfs:range gfo-light:Entity .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C14250
+ncit:C14250 rdf:type owl:Class ;
+            rdfs:subClassOf gfo-light:Individual ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:hasPhenotype ;
+                              owl:someValuesFrom cop:Phenotype
+                            ] ;
+            rdfs:label "Organism"@en ;
+            skos:definition "A living entity."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16275
+ncit:C16275 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:implementedBy ;
+                              owl:allValuesFrom ncit:C17146
+                            ] ;
+            rdfs:label "Algorithm"@en ;
+            skos:definition "A defined procedure for solving a problem. Applied to a problem-solving procedure implemented in software to be executed by a computer."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16866
+ncit:C16866 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ;
+            rdfs:label "Model"@en ;
+            skos:definition "A representation of something, often idealized or modified to make it conceptually easier to understand."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17146
+ncit:C17146 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:implements ;
+                              owl:someValuesFrom ncit:C16275
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:realises ;
+                              owl:someValuesFrom gfo-light:Process
+                            ] ;
+            rdfs:label "Computer Program"@en ;
+            skos:definition "A set of coded instructions, which a computer follows in processing data, performing an operation, or solving a logical problem, upon execution of the program."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19067
+ncit:C19067 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Title"@en ;
+            skos:definition "An identifying designation."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162
+ncit:C25162 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Code"@en ;
+            skos:definition "A symbol or combination of symbols which is assigned to the members of a collection."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365
+ncit:C25365 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Description"@en ;
+            skos:definition "A written or verbal account, representation, statement, or explanation of something."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25709
+ncit:C25709 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Unit of Measure"@en ;
+            skos:definition "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38013
+ncit:C38013 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeRestriction
+                            ] ;
+            rdfs:label "Range"@en ;
+            skos:definition "The difference between the lowest and highest numerical values; the limits or scale of variation."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42645
+ncit:C42645 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Data Type"@en ;
+            skos:definition "An indication of the form that a value will have. Examples include string, integer, and character."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45253
+ncit:C45253 rdf:type owl:Class ;
+            rdfs:subClassOf ncit:C42645 ;
+            rdfs:label "String"@en ;
+            skos:definition "An expression consisting of a linear sequence of symbols (characters or words or phrases)."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45254
+ncit:C45254 rdf:type owl:Class ;
+            rdfs:subClassOf ncit:C42645 ;
+            rdfs:label "Boolean"@en ;
+            skos:definition "The type of an expression with two possible values, \"true\" and \"false\"."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48150
+ncit:C48150 rdf:type owl:Class ;
+            rdfs:subClassOf ncit:C42645 ;
+            rdfs:label "Float"@en ;
+            skos:definition "A number that can have its decimal point in any position."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52469
+ncit:C52469 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:PhenotypeClass
+                            ] ;
+            rdfs:label "Synonym"@en ;
+            skos:definition "A word having the same or nearly the same meaning as another word or other words in a language; a word or an expression that serves as a figurative or symbolic substitute for another."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54086
+ncit:C54086 rdf:type owl:Class ;
+            rdfs:subClassOf ncit:C42645 ;
+            rdfs:label "Timestamp Data Type"@en ;
+            skos:definition "A variation of the Date datatype that's useful for storing very precise datetime values, down to small fractions of seconds. The Timestamp datatype stores all the information that the Date datatype stores, but also includes fractional seconds."@en .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C93550
+ncit:C93550 rdf:type owl:Class ;
+            rdfs:subClassOf cop:RepresentationEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cop:representationAttributeOf ;
+                              owl:someValuesFrom cop:DerivedPhenotypeClass
+                            ] ;
+            rdfs:label "Derivation Expression"@en ;
+            skos:definition "A character string containing a formal language expression that specifies how attributes are, should be, or have been derived from input parameters associated with activity."@en .
+
+
+###  https://w3id.org/cop/BasicPhenotypeClass
+cop:BasicPhenotypeClass rdf:type owl:Class ;
+                        rdfs:subClassOf cop:UnrestrictedPhenotypeClass ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cop:hasRepresentationAttribute ;
+                                          owl:someValuesFrom ncit:C25162
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cop:hasRepresentationAttribute ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass ncit:C42645
+                                        ] ;
+                        rdfs:label "Basic phenotype class"@en ,
+                                   "Basisphänotypklasse"@de ;
+                        skos:definition "Basic phenotype classes represent phenotypes that have already been determined and for which the data are available."@en ,
+                                        "Basisphänotypklassen stellen Phänotypen dar, die bereits bestimmt wurden und für die Daten verfügbar sind."@de .
+
+
+###  https://w3id.org/cop/BasicPhenotypeRestriction
+cop:BasicPhenotypeRestriction rdf:type owl:Class ;
+                              rdfs:subClassOf cop:PhenotypeRestriction ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cop:basicRestrictionOf ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass cop:BasicPhenotypeClass
+                                              ] ;
+                              rdfs:label "Basic phenotype restriction"@en ,
+                                         "Basisphänotypeinschränkung"@de ;
+                              skos:definition "A basic phenotype restriction is a restriction of a basic phenotype class."@en ,
+                                              "Eine Basisphänotypeinschränkung ist eine Einschränkung einer Basisphänotypklasse."@de .
+
+
+###  https://w3id.org/cop/DerivedPhenotypeClass
+cop:DerivedPhenotypeClass rdf:type owl:Class ;
+                          rdfs:subClassOf cop:UnrestrictedPhenotypeClass ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty cop:derivedFrom ;
+                                            owl:someValuesFrom cop:PhenotypeClass
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty cop:hasRepresentationAttribute ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass ncit:C93550
+                                          ] ;
+                          rdfs:label "Abgeleitete Phänotypklasse"@de ,
+                                     "Derived phenotype class"@en ;
+                          skos:definition "Abgeleitete Phänotypklassen modellieren Phänotypen, die aus anderen Phänotypen abgeleitet werden sollten und daher die Formulierung eines Ableitungsausdrucks/einer Ableitungsregel/einer Ableitungsformel erfordern."@de ,
+                                          "Derived phenotype classes model phenotypes that are to be deduced from other phenotypes and thus require a derivation expression/rule/formula to be formulated."@en .
+
+
+###  https://w3id.org/cop/DerivedPhenotypeRestriction
+cop:DerivedPhenotypeRestriction rdf:type owl:Class ;
+                                rdfs:subClassOf cop:PhenotypeRestriction ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty cop:derivedRestrictionOf ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass cop:DerivedPhenotypeClass
+                                                ] ;
+                                rdfs:label "Abgeleitete Phänotypeinschränkung"@de ,
+                                           "Derived phenotype restriction"@en ;
+                                skos:definition "A derived phenotype restriction is a restriction of a derived phenotype class."@en ,
+                                                "Eine abgeleitete Phänotypeinschränkung ist eine Einschränkung einer abgeleiteten Phänotypklasse."@de .
+
+
+###  https://w3id.org/cop/DynamicPhenotypeAlgorithm
+cop:DynamicPhenotypeAlgorithm rdf:type owl:Class ;
+                              rdfs:subClassOf cop:PhenotypeAlgorithm ;
+                              rdfs:label "Dynamic phenotype algorithm"@en ,
+                                         "Dynamischer Phänotyp-Algorithmus"@de ;
+                              skos:definition "A dynamic phenotype algorithm is a clear specification of instructions for executing an arbitrary phenotype query."@en ,
+                                              "Ein dynamischer Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen für die Ausführung einer beliebigen Phänotyp-Abfrage."@de .
+
+
+###  https://w3id.org/cop/Phenotype
+cop:Phenotype rdf:type owl:Class ;
+              rdfs:subClassOf gfo-light:Attributive ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty gfo-light:instanceOf ;
+                                owl:someValuesFrom cop:PhenotypeClass
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cop:phenotypeOf ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ncit:C14250
+                              ] ;
+              rdfs:label "Phenotype"@en ,
+                         "Phänotyp"@de ;
+              skos:definition "A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism."@en ,
+                              "Ein Phänotyp ist eine (Kombination von) körperliche(n) Eigenschaft(en) oder beobachtbare(s) Merkmal(e)/Eigenschaft(en) eines Organismus."@de .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource cop:Phenotype ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism."@en ;
+   cop:ref "Mahner M, Kary M. What Exactly Are Genomes, Genotypes and Phenotypes? And What About Phenomes? J Theor Biol 1997;186:55–63. https://doi.org/10.1006/jtbi.1996.0335." ,
+           "Scheuermann RH, Ceusters W, Smith B. Toward an Ontological Treatment of Disease and Diagnosis. Summit Transl Bioinforma 2009;2009:116–20."
+ ] .
+
+
+###  https://w3id.org/cop/PhenotypeAlgorithm
+cop:PhenotypeAlgorithm rdf:type owl:Class ;
+                       rdfs:subClassOf ncit:C16275 ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty cop:applicableFor ;
+                                         owl:someValuesFrom cop:PhenotypeQuery
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty cop:implementedBy ;
+                                         owl:allValuesFrom cop:PhenotypingSoftware
+                                       ] ;
+                       rdfs:label "Phenotype algorithm"@en ,
+                                  "Phänotyp-Algorithmus"@de ;
+                       skos:definition "A phenotype algorithm is a clear specification of instructions for executing a phenotype query, i.e., identifying individuals matching the query criteria (i.e., meeting all the inclusion but none of the exclusion criteria) and deriving/outputting further phenotypes (projection entries)."@en ,
+                                       "Ein Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen zur Ausführung einer Phänotyp-Abfrage, d.h. zur Identifizierung von Individuen, die den Abfragekriterien entsprechen (d.h. alle Einschluss-, aber keines der Ausschlusskriterien erfüllen) und zur Ableitung/Ausgabe weiterer Phänotypen (Projektionseinträge)."@de .
+
+
+###  https://w3id.org/cop/PhenotypeClass
+cop:PhenotypeClass rdf:type owl:Class ;
+                   rdfs:subClassOf gfo-light:Property ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cop:hasRepresentationAttribute ;
+                                     owl:someValuesFrom ncit:C19067
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty gfo-light:instantiatedBy ;
+                                     owl:allValuesFrom cop:Phenotype
+                                   ] ;
+                   rdfs:label "Phenotype class"@en ,
+                              "Phänotypklasse"@de ;
+                   skos:definition "Phenotype classes are categories whose instances are phenotypes."@en ,
+                                   "Phänotypklassen sind Kategorien, deren Instanzen Phänotypen sind."@de .
+
+
+###  https://w3id.org/cop/PhenotypeModel
+cop:PhenotypeModel rdf:type owl:Class ;
+                   rdfs:subClassOf ncit:C16866 ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cop:represents ;
+                                     owl:someValuesFrom cop:PhenotypeClass
+                                   ] ;
+                   rdfs:label "Phenotype model"@en ,
+                              "Phänotypmodell"@de ;
+                   skos:definition "A phenotype model is a formal representation of delimited phenotypic knowledge (i.e., phenotype classes, their attributes, and relationships)."@en ,
+                                   "Ein Phänotypmodell ist eine formale Darstellung von abgegrenztem phänotypischem Wissen (d.h. von Phänotypklassen, ihren Attributen und Beziehungen)."@de .
+
+
+###  https://w3id.org/cop/PhenotypeQuery
+cop:PhenotypeQuery rdf:type owl:Class ;
+                   rdfs:subClassOf ncit:C16866 ,
+                                   [ rdf:type owl:Class ;
+                                     owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty cop:hasExclusion ;
+                                                     owl:someValuesFrom cop:PhenotypeClass
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty cop:hasInclusion ;
+                                                     owl:someValuesFrom cop:PhenotypeClass
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty cop:hasProjection ;
+                                                     owl:someValuesFrom cop:PhenotypeClass
+                                                   ]
+                                                 )
+                                   ] ;
+                   rdfs:label "Phenotype query"@en ,
+                              "Phänotyp-Abfrage"@de ;
+                   skos:definition "A phenotype query is a specification of certain phenotype classes as inclusion or exclusion criteria or as projection (output) entries."@en ,
+                                   "Eine Phänotyp-Abfrage ist eine Spezifikation bestimmter Phänotyp-Klassen als Ein- oder Ausschlusskriterien oder als Projektions- (Ausgabe-) Einträge."@de .
+
+
+###  https://w3id.org/cop/PhenotypeRestriction
+cop:PhenotypeRestriction rdf:type owl:Class ;
+                         rdfs:subClassOf cop:PhenotypeClass ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty cop:hasRepresentationAttribute ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass ncit:C38013
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty cop:restrictionOf ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass cop:UnrestrictedPhenotypeClass
+                                         ] ;
+                         rdfs:label "Phenotype restriction"@en ,
+                                    "Phänotyprestriktion"@de ;
+                         skos:definition "A phenotype class whose extension (the set of instances, i.e., phenotypes) is restricted to a certain value range is called phenotype restriction."@en ,
+                                         "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) auf einen bestimmten Wertebereich beschränkt ist, wird als Phänotyprestriktion bezeichnet."@de .
+
+
+###  https://w3id.org/cop/Phenotyping
+cop:Phenotyping rdf:type owl:Class ;
+                rdfs:subClassOf gfo-light:Process ;
+                rdfs:label "Phenotyping"@en ,
+                           "Phänotypisierung"@de ;
+                skos:definition "Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen."@de ,
+                                "Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes."@en .
+
+
+###  https://w3id.org/cop/PhenotypingSoftware
+cop:PhenotypingSoftware rdf:type owl:Class ;
+                        rdfs:subClassOf ncit:C17146 ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cop:implements ;
+                                          owl:someValuesFrom cop:PhenotypeAlgorithm
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cop:realises ;
+                                          owl:someValuesFrom cop:Phenotyping
+                                        ] ;
+                        rdfs:label "Phenotyping software"@en ,
+                                   "Phänotypisierungssoftware"@de ;
+                        skos:definition "Phenotyping software is a software implementing a phenotype algorithm. A run of the software (implemented phenotype algorithm) realises a phenotyping process."@en ,
+                                        "Phänotypisierungssoftware ist eine Software, die einen Phänotypisierungsalgorithmus implementiert. Ein Durchlauf der Software (implementierter Phänotypisierungsalgorithmus) führt einen Phänotypisierungsprozess durch."@de .
+
+
+###  https://w3id.org/cop/RepresentationEntity
+cop:RepresentationEntity rdf:type owl:Class ;
+                         rdfs:label "Darstellungseinheit"@de ,
+                                    "Representation entity"@en ;
+                         skos:definition "Eine Darstellungseinheit ist ein Modell, eine Spezifikation oder eine Beschreibung."@de ,
+                                         "Representation entity is a model, specification or description."@en .
+
+
+###  https://w3id.org/cop/StaticPhenotypeAlgorithm
+cop:StaticPhenotypeAlgorithm rdf:type owl:Class ;
+                             rdfs:subClassOf cop:PhenotypeAlgorithm ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty cop:applicableFor ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass cop:PhenotypeQuery
+                                             ] ;
+                             rdfs:label "Static phenotype algorithm"@en ,
+                                        "Statischer Phänotyp-Algorithmus"@de ;
+                             skos:definition "A static phenotype algorithm is a clear specification of instructions for executing exactly one specific phenotype query."@en ,
+                                             "Ein statischer Phänotyp-Algorithmus ist eine klare Spezifikation von Anweisungen zur Ausführung genau einer bestimmten Phänotyp-Abfrage."@de .
+
+
+###  https://w3id.org/cop/UnrestrictedPhenotypeClass
+cop:UnrestrictedPhenotypeClass rdf:type owl:Class ;
+                               rdfs:subClassOf cop:PhenotypeClass ;
+                               rdfs:label "Uneingeschränkte Phänotypklasse"@de ,
+                                          "Unrestricted phenotype class"@en ;
+                               skos:definition "A phenotype class whose extension (the set of instances, i.e., phenotypes) is not restricted to a certain value range is called unrestricted phenotype class."@en ,
+                                               "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) nicht auf einen bestimmten Wertebereich beschränkt ist, wird als uneingeschränkte Phänotypklasse bezeichnet."@de .
+
+
+###  https://w3id.org/gfo-light/Attributive
+gfo-light:Attributive rdf:type owl:Class ;
+                      rdfs:subClassOf gfo-light:Individual ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty gfo-light:instanceOf ;
+                                        owl:someValuesFrom gfo-light:Property
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty gfo-light:attributiveOf ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass gfo-light:Entity
+                                      ] ;
+                      rdfs:label "Attributive"@en ;
+                      skos:definition "Individuals that are related to other individuals by some kind of dependency relation are called attributives."@en .
+
+
+###  https://w3id.org/gfo-light/Category
+gfo-light:Category rdf:type owl:Class ;
+                   rdfs:subClassOf gfo-light:Entity ;
+                   rdfs:label "Category"@en ;
+                   skos:definition "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
+
+
+###  https://w3id.org/gfo-light/Entity
+gfo-light:Entity rdf:type owl:Class ;
+                 rdfs:label "Entity"@en ;
+                 skos:definition "Everything which exists is called an entity."@en .
+
+
+###  https://w3id.org/gfo-light/Individual
+gfo-light:Individual rdf:type owl:Class ;
+                     rdfs:subClassOf gfo-light:Entity ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:instanceOf ;
+                                       owl:someValuesFrom gfo-light:Category
+                                     ] ;
+                     rdfs:label "Individual"@en ;
+                     skos:definition "Individuals are entities which cannot be further instantiated."@en .
+
+
+###  https://w3id.org/gfo-light/Process
+gfo-light:Process rdf:type owl:Class ;
+                  rdfs:subClassOf gfo-light:Individual ;
+                  rdfs:label "Process"@en ;
+                  skos:definition "Processes are concrete individuals that have a temporal extension. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries."@en .
+
+
+###  https://w3id.org/gfo-light/Property
+gfo-light:Property rdf:type owl:Class ;
+                   rdfs:subClassOf gfo-light:Category ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty gfo-light:instantiatedBy ;
+                                     owl:allValuesFrom gfo-light:Attributive
+                                   ] ;
+                   rdfs:label "Property"@en ;
+                   skos:definition "Properties are categories that are instantiated by attributives."@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
