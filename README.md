@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software.
+The Core Ontology of Phenotyping (COP) defines core entities and their relationships that are relevant for modelling phenotypic knowledge and developing phenotyping software. The COP is founded on [GFO-light](https://github.com/Onto-Med/gfo-light).
 
 Browse Ontology: [RDF Browser](https://top.imise.uni-leipzig.de/ontology/cop/)
 
