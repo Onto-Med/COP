@@ -215,13 +215,6 @@ cop:realises rdf:type owl:ObjectProperty ;
              rdfs:label "realises"@en .
 
 
-###  https://w3id.org/cop/represents
-cop:represents rdf:type owl:ObjectProperty ;
-               rdfs:domain cop:PhenotypeClassView ;
-               rdfs:range cop:PhenotypeClass ;
-               rdfs:label "represents"@en .
-
-
 ###  https://w3id.org/cop/restrictionOf
 cop:restrictionOf rdf:type owl:ObjectProperty ;
                   rdfs:domain cop:RestrictedPhenotypeClass ;
@@ -253,6 +246,10 @@ gfo-light:instantiatedBy rdf:type owl:ObjectProperty .
 gfo-light:partOf rdf:type owl:ObjectProperty .
 
 
+###  https://w3id.org/gfo-light/represents
+gfo-light:represents rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -264,8 +261,10 @@ cop:Algorithm rdf:type owl:Class ;
                                 owl:onProperty cop:implementedBy ;
                                 owl:allValuesFrom cop:Software
                               ] ;
-              rdfs:label "Algorithm"@en ;
-              skos:definition "An algorithm is a specification of instructions to solve a problem or a class of problems."@en .
+              rdfs:label "Algorithm"@en ,
+                         "Algorithmus"@de ;
+              skos:definition "An algorithm is a specification of instructions to solve a problem or a class of problems."@en ,
+                              "Ein Algorithmus ist eine Spezifikation von Anweisungen zur Lösung eines Problems oder einer Klasse von Problemen."@de .
 
 
 ###  https://w3id.org/cop/AttributeSpec
@@ -275,8 +274,10 @@ cop:AttributeSpec rdf:type owl:Class ;
                                     owl:onProperty gfo-light:partOf ;
                                     owl:someValuesFrom cop:PhenotypeClassView
                                   ] ;
-                  rdfs:label "Attribute specification"@en ;
-                  skos:definition "An attribute specification is a specification of an attribute."@en .
+                  rdfs:label "Attribute specification"@en ,
+                             "Attributspezifikation"@de ;
+                  skos:definition "An attribute specification is a specification of an attribute."@en ,
+                                  "Eine Attributspezifikation ist eine Spezifikation eines Attributs."@de .
 
 
 ###  https://w3id.org/cop/BasicRestrictedPhenotypeClassView
@@ -288,19 +289,20 @@ cop:BasicRestrictedPhenotypeClassView rdf:type owl:Class ;
                                                         owl:onClass cop:BasicUnrestrictedPhenotypeClassView
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty cop:represents ;
-                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                        owl:onClass cop:RestrictedPhenotypeClass
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty gfo-light:hasPart ;
                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                         owl:onClass cop:ValueRangeSpec
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty gfo-light:represents ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass cop:RestrictedPhenotypeClass
                                                       ] ;
-                                      rdfs:label "Basic phenotype restriction"@en ,
-                                                 "Basisphänotypeinschränkung"@de ;
-                                      skos:definition "A basic phenotype restriction is a restriction of a basic phenotype class."@en ,
-                                                      "Eine Basisphänotypeinschränkung ist eine Einschränkung einer Basisphänotypklasse."@de .
+                                      rdfs:label "Basic restricted phenotype class view"@en ,
+                                                 "Basissicht einer eingeschränkten Phänotypklasse"@de ;
+                                      skos:definition "A basic restricted phenotype class view represents a restricted phenotype class that restricts an unrestricted phenotype class represented by a basic view."@en ,
+                                                      "Eine Basissicht einer eingeschränkten Phänotypklasse repräsentiert eine eingeschränkte Phänotypklasse, die eine uneingeschränkte Phänotypklasse einschränkt, die durch eine Basissicht repräsentiert wird."@de ;
+                                      skos:example "Specification of the phenotype class 'Weight over 100 kg'"@en .
 
 
 ###  https://w3id.org/cop/BasicUnrestrictedPhenotypeClassView
@@ -311,19 +313,20 @@ cop:BasicUnrestrictedPhenotypeClassView rdf:type owl:Class ;
                                                           owl:someValuesFrom cop:TerminologyCode
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty cop:represents ;
-                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onClass cop:UnrestrictedPhenotypeClass
-                                                        ] ,
-                                                        [ rdf:type owl:Restriction ;
                                                           owl:onProperty gfo-light:hasPart ;
                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                           owl:onClass cop:DataTypeSpec
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty gfo-light:represents ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass cop:UnrestrictedPhenotypeClass
                                                         ] ;
-                                        rdfs:label "Basic phenotype class"@en ,
-                                                   "Basisphänotypklasse"@de ;
-                                        skos:definition "Basic phenotype classes represent phenotypes that have already been determined and for which the data are available."@en ,
-                                                        "Basisphänotypklassen stellen Phänotypen dar, die bereits bestimmt wurden und für die Daten verfügbar sind."@de .
+                                        rdfs:label "Basic unrestricted phenotype class view"@en ,
+                                                   "Basissicht einer uneingeschränkten Phänotypklasse"@de ;
+                                        skos:definition "A basic unrestricted phenotype class view represents an unrestricted phenotype class whose instances (phenotypes) have already been determined and can be queried from the data source."@en ,
+                                                        "Eine Basissicht einer uneingeschränkten Phänotypklasse repräsentiert eine uneingeschränkte Phänotypklasse, deren Instanzen (Phänotypen) bereits bestimmt wurden und von der Datenquelle abgefragt werden können."@de ;
+                                        skos:example "Specification of the phenotype class 'Weight'"@en .
 
 
 ###  https://w3id.org/cop/BooleanSpec
@@ -335,8 +338,10 @@ cop:BooleanSpec rdf:type owl:Class ;
 ###  https://w3id.org/cop/DataTypeSpec
 cop:DataTypeSpec rdf:type owl:Class ;
                  rdfs:subClassOf cop:AttributeSpec ;
-                 rdfs:label "Data type specification"@en ;
-                 skos:definition "A data type specification is a specification of a data type (e.g., string, decimal, boolean or date-time)."@en .
+                 rdfs:label "Data type specification"@en ,
+                            "Datentypspezifikation"@de ;
+                 skos:definition "A data type specification is a specification of a data type (e.g., string, decimal, boolean or date-time)."@en ,
+                                 "Eine Datentypspezifikation ist eine Spezifikation eines Datentyps (z.B. Text, Zahl, Boolescher Wert oder Datum-Uhrzeit)."@de .
 
 
 ###  https://w3id.org/cop/DateTimeSpec
@@ -355,11 +360,17 @@ cop:DecimalSpec rdf:type owl:Class ;
 cop:DerivationExpression rdf:type owl:Class ;
                          rdfs:subClassOf cop:AttributeSpec ,
                                          [ rdf:type owl:Restriction ;
+                                           owl:onProperty cop:hasVariable ;
+                                           owl:someValuesFrom cop:PhenotypeClassView
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
                                            owl:onProperty gfo-light:partOf ;
                                            owl:someValuesFrom cop:DerivedUnrestrictedPhenotypeClassView
                                          ] ;
-                         rdfs:label "Derivation expression"@en ;
-                         skos:definition "A derivation expression is an executable formal specification of a combination of different functions/operators and input variables, the execution of which calculates/derives a new value (e.g., of a phenotype) based on the input values."@en .
+                         rdfs:label "Ableitungsausdruck"@de ,
+                                    "Derivation expression"@en ;
+                         skos:definition "A derivation expression is an executable formal specification of a combination of different functions/operators and input variables, the execution of which calculates/derives a new value (e.g., of a phenotype) based on the input values."@en ,
+                                         "Ein Ableitungsausdruck ist eine ausführbare formale Spezifikation einer Kombination aus verschiedenen Funktionen/Operatoren und Eingabevariablen, deren Ausführung einen neuen Wert (z.B. eines Phänotyps) auf der Grundlage der Eingabewerte berechnet/ableitet."@de .
 
 
 ###  https://w3id.org/cop/DerivedRestrictedPhenotypeClassView
@@ -371,19 +382,20 @@ cop:DerivedRestrictedPhenotypeClassView rdf:type owl:Class ;
                                                           owl:onClass cop:DerivedUnrestrictedPhenotypeClassView
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty cop:represents ;
-                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onClass cop:RestrictedPhenotypeClass
-                                                        ] ,
-                                                        [ rdf:type owl:Restriction ;
                                                           owl:onProperty gfo-light:hasPart ;
                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                           owl:onClass cop:ValueRangeSpec
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty gfo-light:represents ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass cop:RestrictedPhenotypeClass
                                                         ] ;
-                                        rdfs:label "Abgeleitete Phänotypeinschränkung"@de ,
-                                                   "Derived phenotype restriction"@en ;
-                                        skos:definition "A derived phenotype restriction is a restriction of a derived phenotype class."@en ,
-                                                        "Eine abgeleitete Phänotypeinschränkung ist eine Einschränkung einer abgeleiteten Phänotypklasse."@de .
+                                        rdfs:label "Ableitungssicht einer eingeschränkten Phänotypklasse"@de ,
+                                                   "Derived restricted phenotype class view"@en ;
+                                        skos:definition "A derived restricted phenotype class view represents a restricted phenotype class that restricts an unrestricted phenotype class represented by a derived view."@en ,
+                                                        "Eine Ableitungssicht einer eingeschränkten Phänotypklasse repräsentiert eine eingeschränkte Phänotypklasse, die eine uneingeschränkte Phänotypklasse einschränkt, die durch eine Ableitungssicht repräsentiert wird."@de ;
+                                        skos:example "Specification of the phenotype class 'Overweight (e.g., BMI over 30)'"@en .
 
 
 ###  https://w3id.org/cop/DerivedUnrestrictedPhenotypeClassView
@@ -394,42 +406,47 @@ cop:DerivedUnrestrictedPhenotypeClassView rdf:type owl:Class ;
                                                             owl:someValuesFrom cop:PhenotypeClassView
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty cop:represents ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass cop:UnrestrictedPhenotypeClass
-                                                          ] ,
-                                                          [ rdf:type owl:Restriction ;
                                                             owl:onProperty gfo-light:hasPart ;
                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                             owl:onClass cop:DerivationExpression
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty gfo-light:represents ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass cop:UnrestrictedPhenotypeClass
                                                           ] ;
-                                          rdfs:label "Abgeleitete Phänotypklasse"@de ,
-                                                     "Derived phenotype class"@en ;
-                                          skos:definition "Abgeleitete Phänotypklassen modellieren Phänotypen, die aus anderen Phänotypen abgeleitet werden sollten und daher die Formulierung eines Ableitungsausdrucks/einer Ableitungsregel/einer Ableitungsformel erfordern."@de ,
-                                                          "Derived phenotype classes model phenotypes that are to be deduced from other phenotypes and thus require a derivation expression/rule/formula to be formulated."@en .
+                                          rdfs:label "Ableitungssicht einer uneingeschränkten Phänotypklasse"@de ,
+                                                     "Derived unrestricted phenotype class view"@en ;
+                                          skos:definition "A derived unrestricted phenotype class view represents an unrestricted phenotype class whose instances (phenotypes) need to be determined (i.e., derived from other phenotypes)."@en ,
+                                                          "Eine Ableitungssicht einer uneingeschränkten Phänotypklasse repräsentiert eine uneingeschränkte Phänotypklasse, deren Instanzen (Phänotypen) bestimmt (d.h. von anderen Phänotypen abgeleitet) werden müssen."@de ;
+                                          skos:example "Specification of the phenotype class 'Body Mass Index (BMI)'"@en .
 
 
 ###  https://w3id.org/cop/Description
 cop:Description rdf:type owl:Class ;
                 rdfs:subClassOf cop:AttributeSpec ;
-                rdfs:label "Description"@en ;
-                skos:definition "A description is a string describing an entity."@en .
+                rdfs:label "Beschreibung"@de ,
+                           "Description"@en ;
+                skos:definition "A description is a string describing an entity."@en ,
+                                "Eine Beschreibung ist eine Zeichenkette, die eine Entität beschreibt."@de .
 
 
 ###  https://w3id.org/cop/DynamicPhenotypeAlgorithm
 cop:DynamicPhenotypeAlgorithm rdf:type owl:Class ;
                               rdfs:subClassOf cop:PhenotypeAlgorithm ;
                               rdfs:label "Dynamic phenotype algorithm"@en ,
-                                         "Dynamischer Phänotyp-Algorithmus"@de ;
+                                         "Dynamischer Phänotypalgorithmus"@de ;
                               skos:definition "A dynamic phenotype algorithm is a phenotype algorithm for executing an arbitrary phenotype query."@en ,
-                                              "Ein dynamischer Phänotyp-Algorithmus ist ein Phänotyp-Algorithmus für die Ausführung einer beliebigen Phänotyp-Abfrage."@de .
+                                              "Ein dynamischer Phänotypalgorithmus ist ein Phänotypalgorithmus für die Ausführung einer beliebigen Phänotypabfrage."@de .
 
 
 ###  https://w3id.org/cop/Model
 cop:Model rdf:type owl:Class ;
           rdfs:subClassOf gfo-light:Token ;
-          rdfs:label "Model"@en ;
-          skos:definition "A model is a representation/specification of an abstraction of an entity."@en .
+          rdfs:label "Model"@en ,
+                     "Modell"@de ;
+          skos:definition "A model is a representation/specification of an abstraction of an entity."@en ,
+                          "Ein Modell ist eine Repräsentation/Spezifikation einer Abstraktion einer Entität."@de .
 
 
 ###  https://w3id.org/cop/Organism
@@ -439,8 +456,10 @@ cop:Organism rdf:type owl:Class ;
                                owl:onProperty gfo-light:hasAttributive ;
                                owl:someValuesFrom cop:Phenotype
                              ] ;
-             rdfs:label "Organism"@en ;
-             skos:definition "An organism is a living object."@en .
+             rdfs:label "Organism"@en ,
+                        "Organismus"@de ;
+             skos:definition "An organism is a living object."@en ,
+                             "Ein Organismus ist ein lebendes Objekt."@de .
 
 
 ###  https://w3id.org/cop/Phenotype
@@ -458,14 +477,17 @@ cop:Phenotype rdf:type owl:Class ;
               rdfs:label "Phenotype"@en ,
                          "Phänotyp"@de ;
               skos:definition "A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism."@en ,
-                              "Ein Phänotyp ist eine (Kombination von) körperliche(n) Eigenschaft(en) oder beobachtbare(s) Merkmal(e)/Eigenschaft(en) eines Organismus."@de .
+                              "Ein Phänotyp ist eine (Kombination von) körperliche(n) Eigenschaft(en) oder beobachtbare(s) Merkmal(e)/Eigenschaft(en) eines Organismus."@de ;
+              skos:example "Body Mass Index (BMI) of a specific person"@en ,
+                           "Overweight of a specific person"@en ,
+                           "Weight of a specific person"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource cop:Phenotype ;
    owl:annotatedProperty skos:definition ;
    owl:annotatedTarget "A phenotype is a (combination of) bodily feature(s) or observable characteristic(s)/trait(s) of an organism."@en ;
    terms:references "Mahner M, Kary M. What Exactly Are Genomes, Genotypes and Phenotypes? And What About Phenomes? J Theor Biol 1997;186:55–63. https://doi.org/10.1006/jtbi.1996.0335."@en ,
-                    "Scheuermann RH, Ceusters W, Smith B. Toward an Ontological Treatment of Disease and Diagnosis. Summit Transl Bioinforma 2009;2009:116–20."@en
+                    "Scheuermann RH, Ceusters W, Smith B. Toward an Ontological Treatment of Disease and Diagnosis. Summit Transl Bioinforma 2009;2009:116–20. https://pmc.ncbi.nlm.nih.gov/articles/PMC3041577/"@en
  ] .
 
 
@@ -481,9 +503,9 @@ cop:PhenotypeAlgorithm rdf:type owl:Class ;
                                          owl:allValuesFrom cop:PhenotypingSoftware
                                        ] ;
                        rdfs:label "Phenotype algorithm"@en ,
-                                  "Phänotyp-Algorithmus"@de ;
+                                  "Phänotypalgorithmus"@de ;
                        skos:definition "A phenotype algorithm is an algorithm for executing a phenotype query, i.e., identifying individuals matching the query criteria (i.e., meeting all the inclusion but none of the exclusion criteria) and deriving/outputting further phenotypes (projection entries)."@en ,
-                                       "Ein Phänotyp-Algorithmus ist ein Algorithmus zur Ausführung einer Phänotyp-Abfrage, d.h. zur Identifizierung von Individuen, die den Abfragekriterien entsprechen (d.h. alle Einschluss-, aber keines der Ausschlusskriterien erfüllen) und zur Ableitung/Ausgabe weiterer Phänotypen (Projektionseinträge)."@de .
+                                       "Ein Phänotypalgorithmus ist ein Algorithmus zur Ausführung einer Phänotypabfrage, d.h. zur Identifizierung von Individuen, die den Abfragekriterien entsprechen (d.h. alle Einschluss-, aber keines der Ausschlusskriterien erfüllen) und zur Ableitung/Ausgabe weiterer Phänotypen (Projektionseinträge)."@de .
 
 
 ###  https://w3id.org/cop/PhenotypeClass
@@ -507,13 +529,14 @@ cop:PhenotypeClassView rdf:type owl:Class ;
                                          owl:someValuesFrom cop:Title
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty cop:represents ;
+                                         owl:onProperty gfo-light:represents ;
                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass cop:PhenotypeClass
                                        ] ;
                        rdfs:label "Phenotype class view"@en ,
-                                  "Sicht der Phänotypklasse"@de ;
-                       skos:definition "A phenotype class view is a formal representation of a phenotype class (its attributes and relationships)."@en .
+                                  "Phänotypklassensicht"@de ;
+                       skos:definition "A phenotype class view is a formal representation of a phenotype class (its attributes and relationships)."@en ,
+                                       "Eine Phänotypklassensicht ist eine formale Repräsentation einer Phänotypklasse (ihrer Attribute und Relationen)."@de .
 
 
 ###  https://w3id.org/cop/PhenotypeModel
@@ -553,9 +576,9 @@ cop:PhenotypeQuery rdf:type owl:Class ;
                                      owl:onClass cop:PhenotypeModel
                                    ] ;
                    rdfs:label "Phenotype query"@en ,
-                              "Phänotyp-Abfrage"@de ;
+                              "Phänotypabfrage"@de ;
                    skos:definition "A phenotype query is a specification of certain phenotype classes as inclusion or exclusion criteria or as projection (output) entries."@en ,
-                                   "Eine Phänotyp-Abfrage ist eine Spezifikation bestimmter Phänotyp-Klassen als Ein- oder Ausschlusskriterien oder als Projektions- (Ausgabe-) Einträge."@de .
+                                   "Eine Phänotypabfrage ist eine Spezifikation bestimmter Phänotypklassen als Ein- oder Ausschlusskriterien oder als Projektions- (Ausgabe-) Einträge."@de .
 
 
 ###  https://w3id.org/cop/Phenotyping
@@ -567,8 +590,8 @@ cop:Phenotyping rdf:type owl:Class ;
                                 ] ;
                 rdfs:label "Phenotyping"@en ,
                            "Phänotypisierung"@de ;
-                skos:definition "Die Phänotypisierung ist ein Prozess der Identifizierung oder Klassifizierung von Phänotypen. Dazu gehören die Identifizierung von Personen mit bestimmten Phänotypen, die Bestimmung von Phänotypen von Personen und die Ableitung weiterer Phänotypen."@de ,
-                                "Phenotyping is a process of identifying or classifiyng phenotypes. This includes the identifying of individuals with certain phenotypes, determining phenotypes of individuals and deriving further phenotypes."@en .
+                skos:definition "Die Phänotypisierung ist ein Prozess der Identifizierung von Personen mit bestimmten Phänotypen."@de ,
+                                "Phenotyping is a process of identifying individuals with certain phenotypes."@en .
 
 
 ###  https://w3id.org/cop/PhenotypingSoftware
@@ -582,10 +605,12 @@ cop:PhenotypingSoftware rdf:type owl:Class ;
                                           owl:onProperty cop:realises ;
                                           owl:someValuesFrom cop:Phenotyping
                                         ] ;
+                        rdfs:comment "A run of a phenotyping software (implemented phenotype algorithm) realises a phenotyping process."@en ,
+                                     "Ein Durchlauf einer Phänotypisierungssoftware (implementierter Phänotypisierungsalgorithmus) realisiert einen Phänotypisierungsprozess."@de ;
                         rdfs:label "Phenotyping software"@en ,
                                    "Phänotypisierungssoftware"@de ;
-                        skos:definition "Phenotyping software is a software implementing a phenotype algorithm. A run of the software (implemented phenotype algorithm) realises a phenotyping process."@en ,
-                                        "Phänotypisierungssoftware ist eine Software, die einen Phänotypisierungsalgorithmus implementiert. Ein Durchlauf der Software (implementierter Phänotypisierungsalgorithmus) führt einen Phänotypisierungsprozess durch."@de .
+                        skos:definition "Phenotyping software is a software implementing a phenotype algorithm."@en ,
+                                        "Phänotypisierungssoftware ist eine Software, die einen Phänotypisierungsalgorithmus implementiert."@de .
 
 
 ###  https://w3id.org/cop/RestrictedPhenotypeClass
@@ -601,7 +626,9 @@ cop:RestrictedPhenotypeClass rdf:type owl:Class ;
                              skos:altLabel "Phenotype restriction"@en ,
                                            "Phänotyprestriktion"@de ;
                              skos:definition "A phenotype class whose extension (the set of instances, i.e., phenotypes) is restricted to a certain value range is called restricted phenotype class."@en ,
-                                             "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) auf einen bestimmten Wertebereich beschränkt ist, wird als eingeschränkte Phänotypklasse bezeichnet."@de .
+                                             "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) auf einen bestimmten Wertebereich beschränkt ist, wird als eingeschränkte Phänotypklasse bezeichnet."@de ;
+                             skos:example "Overweight (e.g., BMI over 30)"@en ,
+                                          "Weight over 100 kg"@en .
 
 
 ###  https://w3id.org/cop/Software
@@ -617,7 +644,8 @@ cop:Software rdf:type owl:Class ;
                              ] ;
              rdfs:label "Software"@de ,
                         "Software"@en ;
-             skos:definition "Software refers to computer executable programmes and their components."@en .
+             skos:definition "Software refers to executable computer programmes including all their components."@en ,
+                             "Unter Software versteht man ausführbare Computerprogramme einschließlich aller ihrer Komponenten."@de .
 
 
 ###  https://w3id.org/cop/StaticPhenotypeAlgorithm
@@ -629,9 +657,9 @@ cop:StaticPhenotypeAlgorithm rdf:type owl:Class ;
                                                owl:onClass cop:PhenotypeQuery
                                              ] ;
                              rdfs:label "Static phenotype algorithm"@en ,
-                                        "Statischer Phänotyp-Algorithmus"@de ;
+                                        "Statischer Phänotypalgorithmus"@de ;
                              skos:definition "A static phenotype algorithm is a phenotype algorithm for executing exactly one specific phenotype query."@en ,
-                                             "Ein statischer Phänotyp-Algorithmus ist ein Phänotyp-Algorithmus zur Ausführung genau einer bestimmten Phänotyp-Abfrage."@de .
+                                             "Ein statischer Phänotypalgorithmus ist ein Phänotypalgorithmus zur Ausführung genau einer bestimmten Phänotypabfrage."@de .
 
 
 ###  https://w3id.org/cop/StringSpec
@@ -643,29 +671,37 @@ cop:StringSpec rdf:type owl:Class ;
 ###  https://w3id.org/cop/Synonym
 cop:Synonym rdf:type owl:Class ;
             rdfs:subClassOf cop:AttributeSpec ;
-            rdfs:label "Synonym"@en ;
-            skos:definition "A synonym is a string that has a similar meaning to the title."@en .
+            rdfs:label "Synonym"@de ,
+                       "Synonym"@en ;
+            skos:definition "A synonym is a string that has a similar meaning to the title."@en ,
+                            "Ein Synonym ist eine Zeichenkette, die eine ähnliche Bedeutung wie der Titel hat."@de .
 
 
 ###  https://w3id.org/cop/TerminologyCode
 cop:TerminologyCode rdf:type owl:Class ;
                     rdfs:subClassOf cop:AttributeSpec ;
-                    rdfs:label "Terminology code"@en ;
-                    skos:definition "A terminology code is a code of a terminology (code system)."@en .
+                    rdfs:label "Terminologiecode"@de ,
+                               "Terminology code"@en ;
+                    skos:definition "A terminology code is a code of a terminology (code system)."@en ,
+                                    "Ein Terminologiecode ist ein Code aus einer Terminologie (Codesystem)."@de .
 
 
 ###  https://w3id.org/cop/Title
 cop:Title rdf:type owl:Class ;
           rdfs:subClassOf cop:AttributeSpec ;
-          rdfs:label "Title"@en ;
-          skos:definition "A title is a string designating an entity."@en .
+          rdfs:label "Titel"@de ,
+                     "Title"@en ;
+          skos:definition "A title is a string designating an entity."@en ,
+                          "Ein Titel ist eine Zeichenkette, die eine Entität bezeichnet."@de .
 
 
 ###  https://w3id.org/cop/UnitOfMeasureSpec
 cop:UnitOfMeasureSpec rdf:type owl:Class ;
                       rdfs:subClassOf cop:AttributeSpec ;
-                      rdfs:label "Unit of measure specification"@en ;
-                      skos:definition "A unit of measure specification is a UCUM designation of a unit of measure."@en .
+                      rdfs:label "Maßeinheitsspezifikation"@de ,
+                                 "Unit of measure specification"@en ;
+                      skos:definition "A unit of measure specification is a specification of a unit of measure."@en ,
+                                      "Eine Maßeinheitsspezifikation ist eine Spezifikation einer Maßeinheit."@de .
 
 
 ###  https://w3id.org/cop/UnrestrictedPhenotypeClass
@@ -674,7 +710,9 @@ cop:UnrestrictedPhenotypeClass rdf:type owl:Class ;
                                rdfs:label "Uneingeschränkte Phänotypklasse"@de ,
                                           "Unrestricted phenotype class"@en ;
                                skos:definition "A phenotype class whose extension (the set of instances, i.e., phenotypes) is not restricted to a certain value range is called unrestricted phenotype class."@en ,
-                                               "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) nicht auf einen bestimmten Wertebereich beschränkt ist, wird als uneingeschränkte Phänotypklasse bezeichnet."@de .
+                                               "Eine Phänotypklasse, deren Erweiterung (die Menge der Instanzen, d.h. der Phänotypen) nicht auf einen bestimmten Wertebereich beschränkt ist, wird als uneingeschränkte Phänotypklasse bezeichnet."@de ;
+                               skos:example "Body Mass Index (BMI)"@en ,
+                                            "Weight"@en .
 
 
 ###  https://w3id.org/cop/ValueRangeSpec
@@ -688,8 +726,10 @@ cop:ValueRangeSpec rdf:type owl:Class ;
                                                                       )
                                                         ]
                                    ] ;
-                   rdfs:label "Value range specification"@en ;
-                   skos:definition "A value range specification is a specification of the permitted values of an entity (e.g., of a phenotype), either by listing them (e.g., for string values) or by defining the minimum and maximum (e.g., for numerical values)."@en .
+                   rdfs:label "Value range specification"@en ,
+                              "Wertebereichsspezifikation"@de ;
+                   skos:definition "A value range specification is a specification of the permitted values of an entity (e.g., of a phenotype), either by listing them (e.g., for string values) or by defining the minimum and maximum (e.g., for numerical values)."@en ,
+                                   "Eine Wertebereichsspezifikation ist eine Spezifikation der zulässigen Werte einer Entität (z.B. eines Phänotyps), entweder durch Auflistung (z.B. bei Zeichenkettenwerten) oder durch Definition von Minimum und Maximum (z.B. bei numerischen Werten)."@de .
 
 
 ###  https://w3id.org/gfo-light/Attributive
