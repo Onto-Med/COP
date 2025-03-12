@@ -8,7 +8,11 @@ The Core Ontology of Phenotyping (COP) defines core entities and their relations
 
 Browse Ontology: [RDF Browser](https://top.imise.uni-leipzig.de/ontology/cop/)
 
-![COP overview](images/cop.png)
+![COP overview](images/cop.svg)
+
+**Figure 1. COP (overview)**
+
+*A run of a phenotyping software (implementing a phenotype algorithm) realises a phenotyping process, i.e., identifies individuals with certain phenotypes (traits or characteristics). Phenotype algorithms describe the execution of phenotype queries, which are based on phenotype models consisting of phenotype class views, which represent phenotype classes instantiated by phenotypes. Phenotype class views consist of attribute specifications (such as title, data type, unit of measure, terminology code, derivation expression, value range, etc.).*
 
 ## Contribution and Development
 
