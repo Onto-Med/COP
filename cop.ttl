@@ -36,7 +36,7 @@
                         rdfs:label "Core Ontology of Phenotyping"@en ;
                         owl:priorVersion <https://w3id.org/cop/release/2024-07-08> ;
                         owl:versionInfo "2025-03-18"^^xsd:date ;
-                        foaf:homepage "https://github.com/Onto-Med/COP" .
+                        foaf:homepage <https://github.com/Onto-Med/COP> .
 
 #################################################################
 #    Annotation properties
@@ -516,6 +516,9 @@ cop:PhenotypeClass rdf:type owl:Class ;
                                      owl:onProperty gfo-light:instantiatedBy ;
                                      owl:allValuesFrom cop:Phenotype
                                    ] ;
+                   owl:disjointUnionOf ( cop:RestrictedPhenotypeClass
+                                         cop:UnrestrictedPhenotypeClass
+                                       ) ;
                    rdfs:label "Phenotype class"@en ,
                               "Phänotypklasse"@de ;
                    skos:definition "Phenotype classes are categories whose instances are phenotypes."@en ,
