@@ -11,7 +11,10 @@ Browse Ontology: [RDF Browser](https://top.imise.uni-leipzig.de/ontology/cop/)
 
 ![COP overview](images/cop.svg)
 
-**Figure 1. COP (overview).** *A run of a phenotyping software (implementing a phenotype algorithm) realises a phenotyping process, i.e., identifies individuals with certain phenotypes (traits or characteristics). Phenotype algorithms describe the execution of phenotype queries, which are based on phenotype models consisting of phenotype class views, which represent phenotype classes instantiated by phenotypes. Phenotype class views consist of attribute specifications (such as title, data type, unit of measure, terminology code, derivation expression, value range, etc.).*
+**Figure 1. COP (overview).**
+*A run of a phenotyping software (implementing a phenotype algorithm) realises a phenotyping process, i.e., identifies individuals with certain phenotypes (traits or characteristics).
+Phenotype algorithms describe the execution of phenotype queries, which are based on phenotype models consisting of phenotype class views, which represent phenotype classes instantiated by phenotypes.
+Phenotype class views consist of attribute specifications (such as title, data type, unit of measure, terminology code, derivation expression, value range, etc.).*
 
 ### Phenotypes and phenotype classes
 The COP distinguishes between **phenotypes**, i.e., individual traits or characteristics (*gfo-light:Attributive*) and **phenotype classes** (*gfo-light:Category*), which are instantiated by phenotypes.
@@ -42,7 +45,8 @@ Please see our [Contributing Guide](CONTRIBUTING.md).
 ## References
 
 The ontology was initially named the Core Ontology of Phenotypes.
-However, its scope was later expanded, prompting a name change. You may encounter references using the older name.
+However, its scope was later expanded, prompting a name change.
+You may encounter references using the older name.
 
 > Uciteli A, Beger C, Kirsten T, Meineke FA, Herre H. Ontological representation, classification and data-driven computing of phenotypes. J Biomed Semant 2020;11:15. https://doi.org/10.1186/s13326-020-00230-0.
 
