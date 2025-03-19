@@ -4,11 +4,9 @@ name: Check ontology
 on:
   push:
     branches:
-      - master
       - main
   pull_request:
     branches:
-      - master
       - main
 
 jobs:
@@ -17,4 +15,4 @@ jobs:
     container: obolibrary/odklite
     steps:
       - uses: actions/checkout@v4
-      - run: check-rdfxml cop.owl
+      - run: check-rdfxml cop.ttl
