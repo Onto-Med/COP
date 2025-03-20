@@ -23,7 +23,7 @@ jobs:
       - name: Compile documentation
         run: |
           java -jar widoco.jar \
-          -ontFile cop.owl \
+          -ontFile cop.ttl \
           -outFolder output \
           -includeAnnotationProperties \
           -rewriteAll \
