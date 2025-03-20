@@ -14,7 +14,7 @@ Make sure you describe the problem as clearly as possible.
 
 We are very happy about contributions!
 
-It is recommended to use an ontology editor such as [Protégé](https://protege.stanford.edu/) to modify the ontology [cop.owl](cop.owl).
+It is recommended to use an ontology editor such as [Protégé](https://protege.stanford.edu/) to modify the ontology [cop.ttl](cop.ttl).
 If you want to contribute changes, please do so by:
 
 1. cloning this repository (forking for external contributors)
