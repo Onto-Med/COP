@@ -2,7 +2,7 @@ services:
   rickview:
     image: ghcr.io/konradhoeffner/rickview
     environment:
-      - RICKVIEW_KB_FILE=https://github.com/Onto-Med/COP/releases/latest/download/cop.owl
+      - RICKVIEW_KB_FILE=https://github.com/Onto-Med/COP/releases/latest/download/cop.ttl
       - RICKVIEW_NAMESPACE=https://w3id.org/cop/
       - RICKVIEW_BASE=/ontology/cop
       - RICKVIEW_TITLE=COP
