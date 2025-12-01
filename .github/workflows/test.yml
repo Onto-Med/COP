@@ -14,5 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: check-rdfxml cop.ttl
